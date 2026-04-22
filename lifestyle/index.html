@@ -4,40 +4,185 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lifestyle Coaching | Bertin Coaching - Rebuild With Structure</title>
-  <meta name="description" content="Premium lifestyle coaching for busy professionals and parents ready to rebuild their body with structure. Real results, no guesswork." />
+  <meta name="description" content="Premium lifestyle coaching for driven individuals who want to lose fat, regain control, and build a physique that lasts. Structured, data-driven coaching." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
   <style>
-    :root{--bg:#071018;--bg-soft:#0d1821;--line:rgba(255,255,255,0.08);--cream:#f6f1ea;--sand:#d7c8b2;--text:#e8edf2;--muted:rgba(232,237,242,0.68);--gold:#c79a5b;--copper:#d07a37;--radius:28px;--headline:'Playfair Display',serif;--body:'Inter',system-ui,sans-serif}
+    :root {
+      --bg: #071018;
+      --bg-soft: #0d1821;
+      --panel: #111f2b;
+      --line: rgba(255,255,255,0.08);
+      --cream: #f6f1ea;
+      --sand: #d7c8b2;
+      --text: #e8edf2;
+      --muted: rgba(232,237,242,0.68);
+      --gold: #c79a5b;
+      --copper: #d07a37;
+      --radius: 24px;
+      --radius-sm: 15px;
+      --headline: 'Playfair Display',serif;
+      --body: 'Inter',system-ui,sans-serif;
+    }
     *,*::before,*::after{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:var(--body);color:var(--text);background:radial-gradient(circle at top left,rgba(199,154,91,0.14),transparent 28%),radial-gradient(circle at 85% 10%,rgba(208,122,55,0.12),transparent 22%),linear-gradient(180deg,#050b10 0%,#09121a 30%,#0a1118 100%);overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
+    body{margin:0;font-family:var(--body);color:var(--text);background:radial-gradient(circle at top left,rgba(199,154,91,0.14),transparent 28%),radial-gradient(circle at 85% 10%,rgba(208,122,55,0.12),transparent 22%),linear-gradient(180deg,#050b10 0%,#09121a 30%,#0a1118 100%);overflow-x:hidden}
+    img{display:block;width:100%;height:auto}
     a{color:inherit;text-decoration:none}
+    button{font:inherit;cursor:pointer}
     .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
-    .nav{position:fixed;inset:0 0 auto 0;z-index:50;padding:18px 0}
-    .nav.scrolled{background:rgba(7,16,24,0.92);backdrop-filter:blur(18px)}
+
+    /* NAV */
+    .nav{position:fixed;inset:0 0 auto 0;z-index:50;padding:18px 0;transition:background .25s,border-color .25s,box-shadow .25s}
+    .nav.scrolled{background:rgba(7,16,24,0.92);backdrop-filter:blur(18px);box-shadow:0 10px 40px rgba(0,0,0,0.24);border-bottom:1px solid rgba(255,255,255,0.06)}
     .nav-inner{width:min(1180px,calc(100% - 40px));margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .logo{display:inline-flex;align-items:center;gap:14px}
+    .logo{display:inline-flex;align-items:center;gap:14px;min-width:0}
     .logo img{width:52px;height:52px;object-fit:contain;border-radius:14px;background:rgba(255,255,255,0.04);padding:6px;border:1px solid rgba(255,255,255,0.05)}
-    .brand-copy{display:flex;flex-direction:column;line-height:1.1}
+    .brand-copy{display:flex;flex-direction:column;line-height:1.1;min-width:0}
     .brand-copy strong{font-size:0.98rem;letter-spacing:0.02em}
     .brand-copy span{font-size:0.78rem;color:var(--muted)}
     .nav-links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0}
     .nav-links a{color:rgba(232,237,242,0.78);font-size:0.92rem;font-weight:500;transition:color .2s}
     .nav-links a:hover{color:var(--cream)}
-    .nav-cta{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:999px;background:linear-gradient(135deg,var(--gold),var(--copper));color:#091018!important;font-weight:800!important;box-shadow:0 12px 30px rgba(199,154,91,0.24)}
-    .hero{flex:1;padding:180px 0 100px;text-align:center;display:flex;align-items:center;justify-content:center}
-    .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:999px;background:rgba(199,154,91,0.1);border:1px solid rgba(199,154,91,0.2);color:var(--sand);font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:24px}
-    .hero h1{margin:0 auto;font-family:var(--headline);font-size:clamp(2.5rem,6vw,4.5rem);line-height:1.05;letter-spacing:-0.02em;max-width:16ch}
-    .hero h1 span{display:block;color:var(--sand)}
-    .hero p{margin:24px auto 0;max-width:560px;color:var(--muted);font-size:1.1rem;line-height:1.7}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 28px;border-radius:999px;border:1px solid transparent;font-weight:700;font-size:0.95rem;transition:transform .2s,box-shadow .2s;margin-top:32px}
+    .nav-cta{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:15px;background:linear-gradient(135deg,var(--gold),var(--copper));color:#091018!important;font-weight:800!important;box-shadow:0 12px 30px rgba(199,154,91,0.24)}
+    .menu-btn{display:none;width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);color:var(--cream);flex-direction:column;justify-content:center;align-items:center;gap:4px;padding:0}
+    .menu-btn span{display:block;width:20px;height:2px;border-radius:2px;background:currentColor}
+    .mobile-menu{display:none;position:fixed;top:80px;left:20px;right:20px;background:rgba(7,16,24,0.98);border:1px solid var(--line);border-radius:15px;padding:20px;z-index:100}
+    .mobile-menu.active{display:block}
+    .mobile-menu a{display:block;padding:14px 0;color:var(--text);font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+    .mobile-menu a:last-child{border-bottom:none}
+
+    /* BUTTONS - max 15px radius */
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 28px;border-radius:15px;border:1px solid transparent;font-weight:700;font-size:0.95rem;transition:transform .2s,box-shadow .2s,background .2s;text-align:center}
     .btn:hover{transform:translateY(-2px)}
     .btn-primary{background:linear-gradient(135deg,var(--gold),var(--copper));color:#091018;box-shadow:0 14px 30px rgba(208,122,55,0.22)}
-    footer{padding:40px 0;text-align:center;border-top:1px solid rgba(255,255,255,0.06)}
+    .btn-secondary{border-color:rgba(255,255,255,0.14);background:rgba(255,255,255,0.04);color:var(--cream)}
+    .btn-large{min-height:60px;padding:0 32px;font-size:1rem}
+
+    /* HERO */
+    .hero{padding:160px 0 100px;text-align:center;position:relative;background:radial-gradient(ellipse at 50% 0%,rgba(199,154,91,0.08) 0%,transparent 60%)}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:15px;background:rgba(215,200,178,0.12);border:1px solid rgba(215,200,178,0.2);color:var(--sand);font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:24px}
+    .hero h1{margin:0 auto;font-family:var(--headline);font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.05;letter-spacing:-0.02em;max-width:16ch}
+    .hero h1 span{display:block;color:var(--sand)}
+    .hero-subheadline{margin:28px auto 0;max-width:620px;color:var(--muted);font-size:1.15rem;line-height:1.7}
+    .hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:36px}
+    .hero-micro{margin-top:20px;font-size:0.85rem;color:var(--muted)}
+
+    /* SECTIONS */
+    .section{padding:100px 0}
+    .section-alt{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0))}
+    .section-dark{background:linear-gradient(180deg,rgba(5,11,16,0) 0%,rgba(5,11,16,0.5) 100%)}
+    .section-head{text-align:center;margin-bottom:60px}
+    .section-head h2{margin:0 0 16px;font-family:var(--headline);font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-0.02em}
+    .section-head p{margin:0 auto;max-width:620px;color:var(--muted);line-height:1.7;font-size:1.05rem}
+
+    /* CALLOUT */
+    .callout-box{max-width:800px;margin:0 auto;padding:48px;border-radius:var(--radius);background:rgba(215,200,178,0.05);border:1px solid rgba(215,200,178,0.15);text-align:center}
+    .callout-box h3{font-family:var(--headline);font-size:1.5rem;color:var(--sand);margin:0 0 24px}
+    .callout-box p{font-size:1.1rem;line-height:1.8;color:var(--text);margin:0 0 20px}
+    .callout-box ul{list-style:none;padding:0;margin:0;display:inline-block;text-align:left}
+    .callout-box ul li{padding:10px 0;padding-left:28px;position:relative;font-size:1rem;color:var(--muted)}
+    .callout-box ul li::before{content:'';position:absolute;left:0;top:18px;width:6px;height:6px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--copper))}
+    .callout-box strong{display:block;margin-top:32px;font-size:1.3rem;color:var(--cream)}
+
+    /* PROBLEM BOX */
+    .problem-box{max-width:800px;margin:0 auto;border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:48px;background:rgba(255,255,255,0.02)}
+    .problem-box h3{font-family:var(--headline);font-size:1.4rem;margin:0 0 24px;color:var(--text)}
+    .problem-box ul{list-style:none;padding:0;margin:0 0 24px}
+    .problem-box li{padding:14px 0;padding-left:32px;position:relative;border-bottom:1px solid rgba(255,255,255,0.04);font-size:1.05rem;color:var(--muted)}
+    .problem-box li:last-child{border-bottom:none}
+    .problem-box li::before{content:'×';position:absolute;left:0;color:rgba(232,237,242,0.4);font-weight:700}
+    .problem-box .conclusion{margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08);font-size:1.15rem;color:var(--text);font-weight:500}
+
+    /* METHOD */
+    .method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+    .method-card{padding:32px 24px;border-radius:15px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);text-align:center}
+    .method-card .num{width:48px;height:48px;margin:0 auto 18px;border-radius:15px;background:linear-gradient(135deg,var(--gold),var(--copper));color:#091018;font-weight:900;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
+    .method-card h3{margin:0 0 10px;font-size:1.05rem;font-weight:700}
+    .method-card p{margin:0;color:var(--muted);font-size:0.92rem;line-height:1.65}
+    .method-tagline{text-align:center;margin:40px auto 0;max-width:500px;font-size:1.15rem;font-style:italic;color:var(--sand)}
+
+    /* PROMISE */
+    .promise-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto}
+    .promise-card{padding:36px 32px;border-radius:15px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06)}
+    .promise-card h4{margin:0 0 12px;font-size:1.1rem;color:var(--sand)}
+    .promise-card p{margin:0;color:var(--muted);font-size:0.95rem;line-height:1.6}
+    .promise-highlight{max-width:700px;margin:40px auto 0;text-align:center;padding:28px 32px;border-radius:15px;background:rgba(215,200,178,0.08);border:1px solid rgba(215,200,178,0.15)}
+    .promise-highlight p{margin:0;font-size:1.1rem;color:var(--text);font-style:italic}
+
+    /* WHAT YOU GET */
+    .features-list{max-width:800px;margin:0 auto;list-style:none;padding:0}
+    .features-list li{display:flex;align-items:flex-start;gap:20px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
+    .features-list li:last-child{border-bottom:none}
+    .feature-icon{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,rgba(199,154,91,0.2),rgba(208,122,55,0.15));border:1px solid rgba(199,154,91,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem}
+    .feature-content h4{margin:0 0 6px;font-size:1.1rem;color:var(--cream)}
+    .feature-content p{margin:0;color:var(--muted);font-size:0.95rem;line-height:1.6}
+
+    /* WHY */
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1000px;margin:0 auto}
+    .why-col h4{margin:0 0 20px;font-size:1.1rem;letter-spacing:0.1em;text-transform:uppercase}
+    .why-col.others h4{color:rgba(232,237,242,0.5)}
+    .why-col.us h4{color:var(--sand)}
+    .why-list{list-style:none;padding:0;margin:0}
+    .why-list li{padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:1rem;color:rgba(232,237,242,0.7)}
+    .why-list li:last-child{border-bottom:none}
+    .why-col.us .why-list li{color:var(--text);font-weight:500}
+
+    /* EXPECTATIONS */
+    .exp-two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:0 auto}
+    .exp-card{padding:36px;border-radius:var(--radius);background:rgba(255,255,255,0.02);border:1px solid var(--line)}
+    .exp-card h4{margin:0 0 20px;font-size:1rem;letter-spacing:0.1em;text-transform:uppercase}
+    .exp-card.expect h4{color:var(--sand)}
+    .exp-card.receive h4{color:var(--gold)}
+    .exp-list{list-style:none;padding:0;margin:0}
+    .exp-list li{padding:10px 0;font-size:0.95rem;color:rgba(232,237,242,0.85)}
+    .exp-card.receive .exp-list li{color:var(--text);font-weight:500}
+    .exp-footer{max-width:700px;margin:40px auto 0;text-align:center;padding:24px 32px;border-radius:15px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08)}
+    .exp-footer p{margin:0;font-size:1rem;color:var(--muted)}
+
+    /* FILTER */
+    .filter-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+    .filter-card{padding:40px;border-radius:var(--radius);background:rgba(255,255,255,0.02);border:1px solid var(--line)}
+    .filter-card.for h4{color:var(--sand);margin:0 0 20px;font-size:1rem;letter-spacing:0.1em;text-transform:uppercase}
+    .filter-card.not h4{color:rgba(232,237,242,0.5);margin:0 0 20px;font-size:1rem;letter-spacing:0.1em;text-transform:uppercase}
+    .filter-list{list-style:none;padding:0;margin:0}
+    .filter-list li{padding:10px 0;font-size:0.95rem;color:rgba(232,237,242,0.85)}
+    .filter-card.not .filter-list li{color:rgba(232,237,242,0.5);text-decoration:line-through}
+
+    /* FINAL CTA */
+    .final-cta{padding:100px 0;text-align:center;background:linear-gradient(180deg,rgba(215,200,178,0.06) 0%,transparent 100%);border-top:1px solid rgba(255,255,255,0.06)}
+    .final-cta h2{font-family:var(--headline);font-size:clamp(2rem,4vw,3rem);margin:0 0 20px}
+    .final-cta p.lead{max-width:600px;margin:0 auto 40px;color:var(--muted);font-size:1.15rem;line-height:1.75;font-style:italic}
+    .final-cta p.note{margin-top:20px;font-size:0.85rem;color:var(--muted)}
+
+    /* DIFFERENCE BOX */
+    .difference-box{max-width:800px;margin:0 auto;padding:48px;border-radius:var(--radius);background:linear-gradient(180deg,rgba(199,154,91,0.08),rgba(199,154,91,0.03));border:1px solid rgba(199,154,91,0.2);text-align:center}
+    .difference-box h3{font-family:var(--headline);font-size:1.6rem;margin:0 0 20px;color:var(--gold)}
+    .difference-box p{margin:0 0 16px;font-size:1.15rem;line-height:1.8;color:var(--text)}
+    .difference-box .final-line{margin-top:24px;padding-top:24px;border-top:1px solid rgba(199,154,91,0.15);font-size:1.3rem;font-weight:600;color:var(--sand)}
+
+    footer{padding:50px 0;text-align:center;border-top:1px solid rgba(255,255,255,0.06)}
     footer p{margin:0;color:var(--muted);font-size:0.9rem}
-    @media(max-width:900px){.nav-links{display:none}}
+
+    @media(max-width:900px){
+      .nav-links{display:none}
+      .menu-btn{display:flex}
+      .method-grid{grid-template-columns:1fr 1fr}
+      .promise-grid{grid-template-columns:1fr}
+      .exp-two-col{grid-template-columns:1fr}
+      .why-grid{grid-template-columns:1fr;gap:40px}
+      .filter-grid{grid-template-columns:1fr}
+      .difference-box{padding:32px 24px}
+    }
+    @media(max-width:600px){
+      .method-grid{grid-template-columns:1fr}
+      .callout-box{padding:32px 24px}
+      .problem-box{padding:32px 24px}
+      .promise-card{padding:28px 24px}
+      .exp-card{padding:28px}
+      .filter-card{padding:28px}
+    }
   </style>
 </head>
 <body>
@@ -54,27 +199,295 @@
         <li><a href="/results">Results</a></li>
         <li><a href="https://bertincoaching.com/lifestyle-booking" class="nav-cta">Apply Now</a></li>
       </ul>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/">Home</a>
+      <a href="/competition">Competition</a>
+      <a href="/lifestyle">Lifestyle</a>
+      <a href="/results">Results</a>
+      <a href="https://bertincoaching.com/lifestyle-booking">Apply Now</a>
     </div>
   </nav>
 
   <section class="hero">
     <div class="container">
       <div class="hero-eyebrow">Lifestyle Coaching</div>
-      <h1>Rebuild Your Body <span>With Structure That Works</span></h1>
-      <p>Premium lifestyle coaching for busy professionals, parents, and individuals ready to stop starting over. Coming soon — full page in development.</p>
-      <a href="https://bertincoaching.com/lifestyle-booking" class="btn btn-primary">Apply for Lifestyle Coaching</a>
+      <h1>Rebuild Your Body <span>With a System That Actually Works</span></h1>
+      <p class="hero-subheadline">Lifestyle coaching for driven individuals who want to lose fat, regain control, and build a physique that lasts, without starting over every few months.</p>
+      <div class="hero-actions">
+        <a href="https://bertincoaching.com/lifestyle-booking" class="btn btn-primary btn-large">Apply for Lifestyle Coaching</a>
+      </div>
+      <p class="hero-micro">Hundreds of successful transformations. Structured, data-driven coaching.</p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="callout-box">
+        <h3>This is not for beginners looking for motivation.</h3>
+        <p>This is for people who:</p>
+        <ul>
+          <li>have tried multiple plans</li>
+          <li>know what to do, but can't stay consistent</li>
+          <li>are balancing work, responsibilities, and life</li>
+          <li>and are tired of restarting</li>
+        </ul>
+        <strong>You don't need more information.<br>You need structure.</strong>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="problem-box">
+        <h3>Most people don't fail because they lack discipline.</h3>
+        <ul>
+          <li>their plan isn't built for their life</li>
+          <li>there is no system to follow</li>
+          <li>and no one is making real adjustments</li>
+        </ul>
+        <p class="conclusion">So they rely on motivation.<br>And motivation doesn't last.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-head">
+        <h2>The Bertin Method™, adapted for lifestyle clients</h2>
+        <p>A structured approach designed to create results that are: measurable, sustainable, repeatable.</p>
+      </div>
+      <div class="method-grid">
+        <div class="method-card">
+          <div class="num">1</div>
+          <h3>Audit</h3>
+          <p>We assess your current body, habits, schedule, and constraints.</p>
+        </div>
+        <div class="method-card">
+          <div class="num">2</div>
+          <h3>Build</h3>
+          <p>You receive a personalized training, nutrition, and supplementation system.</p>
+        </div>
+        <div class="method-card">
+          <div class="num">3</div>
+          <h3>Execute</h3>
+          <p>We adjust weekly based on real data, not assumptions.</p>
+        </div>
+        <div class="method-card">
+          <div class="num">4</div>
+          <h3>Refine</h3>
+          <p>We optimize your physique while building long-term control.</p>
+        </div>
+      </div>
+      <p class="method-tagline">"This is not about doing more. It's about following the right system, consistently."</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>What You Can Expect</h2>
+      </div>
+      <div class="promise-grid">
+        <div class="promise-card">
+          <h4>Fat Loss & Recomposition</h4>
+          <p>Visible changes in body composition within the first weeks.</p>
+        </div>
+        <div class="promise-card">
+          <h4>Increased Strength & Energy</h4>
+          <p>Performance improvements that translate to daily life.</p>
+        </div>
+        <div class="promise-card">
+          <h4>Structured Routine</h4>
+          <p>A system that fits your life, not the other way around.</p>
+        </div>
+        <div class="promise-card">
+          <h4>Confidence & Control</h4>
+          <p>Knowing exactly what to do, and why it works.</p>
+        </div>
+      </div>
+      <div class="promise-highlight">
+        <p>Most clients don't just lose weight. They stop losing and regaining the same 10–20 pounds.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>Your Coaching Includes</h2>
+        <p>Every variable is adjusted based on your progress. Nothing is left static.</p>
+      </div>
+      <ul class="features-list">
+        <li>
+          <div class="feature-icon">💪</div>
+          <div class="feature-content">
+            <h4>Fully Personalized Training Program</h4>
+            <p>Built for your schedule, equipment access, and fitness level. Updated as you progress.</p>
+          </div>
+        </li>
+        <li>
+          <div class="feature-icon">🥗</div>
+          <div class="feature-content">
+            <h4>Custom Nutrition Plan</h4>
+            <p>Flexible options that fit your lifestyle while delivering results.</p>
+          </div>
+        </li>
+        <li>
+          <div class="feature-icon">💊</div>
+          <div class="feature-content">
+            <h4>Supplementation Guidance</h4>
+            <p>Evidence-based protocols for optimization and performance.</p>
+          </div>
+        </li>
+        <li>
+          <div class="feature-icon">📊</div>
+          <div class="feature-content">
+            <h4>Bi-Weekly Check-ins & Adjustments</h4>
+            <p>Real feedback based on data, photos, and performance metrics.</p>
+          </div>
+        </li>
+        <li>
+          <div class="feature-icon">🛠</div>
+          <div class="feature-content">
+            <h4>Access to Coaching Systems & Tools</h4>
+            <p>Track progress, communicate, and stay accountable.</p>
+          </div>
+        </li>
+        <li>
+          <div class="feature-icon">💬</div>
+          <div class="feature-content">
+            <h4>Ongoing Support & Accountability</h4>
+            <p>Questions answered, adjustments made, momentum maintained.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Why This Works</h2>
+        <p>You don't need more motivation. You need a system that works.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-col others">
+          <h4>Most Coaching</h4>
+          <ul class="why-list">
+            <li>Gives you a plan and hopes you follow it</li>
+            <li>Reacts too late</li>
+            <li>Doesn't adapt to your life</li>
+            <li>Generic templates for everyone</li>
+          </ul>
+        </div>
+        <div class="why-col us">
+          <h4>Bertin Coaching</h4>
+          <ul class="why-list">
+            <li>Your plan evolves weekly</li>
+            <li>Adjustments are based on real metrics</li>
+            <li>Your lifestyle is built into the system</li>
+            <li>You are coached, not managed</li>
+          </ul>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:40px;">
+        <p style="font-size:1.15rem;color:var(--sand);font-style:italic;">This is not a template. This is a system built around you.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>What We Expect / What You Receive</h2>
+        <p>This is a collaboration. The system only works if it is followed.</p>
+      </div>
+      <div class="exp-two-col">
+        <div class="exp-card expect">
+          <h4>What We Expect From You</h4>
+          <ul class="exp-list">
+            <li>Consistency</li>
+            <li>Communication</li>
+            <li>Willingness to follow structure</li>
+          </ul>
+        </div>
+        <div class="exp-card receive">
+          <h4>What You Can Expect From Us</h4>
+          <ul class="exp-list">
+            <li>Precision</li>
+            <li>Adjustments</li>
+            <li>Accountability</li>
+            <li>Results</li>
+          </ul>
+        </div>
+      </div>
+      <div class="exp-footer">
+        <p>This is a collaboration. But the system only works if it is followed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Who This Is For</h2>
+      </div>
+      <div class="filter-grid">
+        <div class="filter-card for">
+          <h4>This Is For You If</h4>
+          <ul class="filter-list">
+            <li>You are ready to stop restarting</li>
+            <li>You want structure, not guesswork</li>
+            <li>You are willing to execute</li>
+          </ul>
+        </div>
+        <div class="filter-card not">
+          <h4>This Is Not For You If</h4>
+          <ul class="filter-list">
+            <li>You are looking for a quick fix</li>
+            <li>You are not ready to commit</li>
+            <li>You prefer flexibility over results</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-dark">
+    <div class="container">
+      <div class="difference-box">
+        <h3>The Difference Is Not Effort</h3>
+        <p>Most people are already trying hard.</p>
+        <p>The difference is having a system that actually works.</p>
+        <div class="final-line">If you follow the process, results are not a question.<br>Only the timeline varies.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <h2>Apply for Lifestyle Coaching</h2>
+      <p class="lead">We accept a limited number of clients to maintain coaching quality.</p>
+      <a href="https://bertincoaching.com/lifestyle-booking" class="btn btn-primary btn-large">Apply Now</a>
+      <p class="note">Applications reviewed within 24 hours.</p>
     </div>
   </section>
 
   <footer>
     <div class="container">
       <p><a href="/">← Back to Home</a></p>
-      <p style="margin-top:12px;">&copy; 2026 Bertin Coaching</p>
+      <p style="margin-top:12px;">&copy; 2026 Bertin Coaching. Elite Physique Systems.</p>
     </div>
   </footer>
 
   <script>
     window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
+    const menuBtn=document.getElementById('menuBtn');
+    const mobileMenu=document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click',()=>{mobileMenu.classList.toggle('active')});
+    document.addEventListener('click',(e)=>{if(!mobileMenu.contains(e.target)&&!menuBtn.contains(e.target))mobileMenu.classList.remove('active')});
   </script>
 </body>
 </html>

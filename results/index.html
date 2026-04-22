@@ -25,15 +25,21 @@
     .nav-links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0}
     .nav-links a{color:rgba(232,237,242,0.78);font-size:0.92rem;font-weight:500}
     .nav-links a:hover{color:var(--cream)}
-    .nav-cta{display:inline-flex;align-items:center;padding:12px 18px;border-radius:999px;background:linear-gradient(135deg,var(--gold),var(--copper));color:#091018!important;font-weight:800!important}
+    .nav-cta{display:inline-flex;align-items:center;padding:12px 20px;border-radius:15px;background:linear-gradient(135deg,var(--gold),var(--copper));color:#091018!important;font-weight:800!important}
+    .menu-btn{display:none;width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);color:var(--cream);flex-direction:column;justify-content:center;align-items:center;gap:4px;padding:0}
+    .menu-btn span{display:block;width:20px;height:2px;border-radius:2px;background:currentColor}
+    .mobile-menu{display:none;position:fixed;top:80px;left:20px;right:20px;background:rgba(7,16,24,0.98);border:1px solid var(--line);border-radius:15px;padding:20px;z-index:100}
+    .mobile-menu.active{display:block}
+    .mobile-menu a{display:block;padding:14px 0;color:var(--text);font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+    .mobile-menu a:last-child{border-bottom:none}
     .hero{flex:1;padding:180px 0 100px;text-align:center}
     .hero h1{margin:0 auto;font-family:var(--headline);font-size:clamp(2.5rem,6vw,4rem);line-height:1.05}
     .hero h1 span{color:var(--gold)}
     .hero p{margin:20px auto 0;max-width:500px;color:var(--muted);font-size:1.1rem;line-height:1.7}
-    .coming-soon{display:inline-block;margin-top:40px;padding:16px 32px;border-radius:999px;background:rgba(255,255,255,0.04);border:1px solid var(--line);color:var(--muted)}
+    .coming-soon{display:inline-block;margin-top:40px;padding:16px 32px;border-radius:15px;background:rgba(255,255,255,0.04);border:1px solid var(--line);color:var(--muted)}
     footer{padding:40px 0;text-align:center;border-top:1px solid rgba(255,255,255,0.06)}
     footer p{margin:0;color:var(--muted);font-size:0.9rem}
-    @media(max-width:900px){.nav-links{display:none}}
+    @media(max-width:900px){.nav-links{display:none}.menu-btn{display:flex}}
   </style>
 </head>
 <body>
@@ -50,6 +56,14 @@
         <li><a href="/results">Results</a></li>
         <li><a href="/#apply" class="nav-cta">Apply Now</a></li>
       </ul>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="/">Home</a>
+      <a href="/competition">Competition</a>
+      <a href="/lifestyle">Lifestyle</a>
+      <a href="/results">Results</a>
+      <a href="/#apply">Apply Now</a>
     </div>
   </nav>
 
@@ -70,6 +84,10 @@
 
   <script>
     window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
+    const menuBtn=document.getElementById('menuBtn');
+    const mobileMenu=document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click',()=>{mobileMenu.classList.toggle('active')});
+    document.addEventListener('click',(e)=>{if(!mobileMenu.contains(e.target)&&!menuBtn.contains(e.target))mobileMenu.classList.remove('active')});
   </script>
 </body>
 </html>
