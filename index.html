@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bertin Coaching | Competition Prep and Lifestyle Coaching</title>
+  <meta name="description" content="Premium coaching for athletes and lifestyle clients. Competition prep, body recomposition, and bilingual support built around real results." />
+  <meta name="author" content="Bertin Coaching" />
+  <meta property="og:title" content="Bertin Coaching | Competition Prep and Lifestyle Coaching" />
+  <meta property="og:description" content="Premium coaching for athletes and lifestyle clients. Competition prep, body recomposition, and bilingual support built around real results." />
+  <meta property="og:image" content="https://assets.cdn.filesafe.space/7BACHlimOjRa4xMD4hlh/media/6939dab5169a42da3a275396.jpeg" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #071018;
+      --bg-soft: #0d1821;
+      --panel: #111f2b;
+      --panel-soft: #162736;
+      --line: rgba(255, 255, 255, 0.08);
+      --cream: #f6f1ea;
+      --sand: #d7c8b2;
+      --text: #e8edf2;
+      --muted: rgba(232, 237, 242, 0.68);
+      --gold: #c79a5b;
+      --copper: #d07a37;
+      --shadow: 0 30px 80px rgba(0, 0, 0, 0.28);
+      --radius: 28px;
+      --radius-sm: 18px;
+      --headline: 'Playfair Display', serif;
+      --body: 'Inter', system-ui, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--body);
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(199, 154, 91, 0.14), transparent 28%),
+        radial-gradient(circle at 85% 10%, rgba(208, 122, 55, 0.12), transparent 22%),
+        linear-gradient(180deg, #050b10 0%, #09121a 30%, #0a1118 100%);
+      overflow-x: hidden;
+    }
+
+    img { display: block; width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 50;
+      padding: 18px 0;
+      transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .nav.scrolled {
+      background: rgba(7, 16, 24, 0.92);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.24);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .logo img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+      min-width: 0;
+    }
+
+    .brand-copy strong {
+      font-size: 0.98rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-copy span {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      color: rgba(232, 237, 242, 0.78);
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover { color: var(--cream); }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold), var(--copper));
+      color: #091018 !important;
+      font-weight: 800 !important;
+      box-shadow: 0 12px 30px rgba(199, 154, 91, 0.24);
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.03);
+      color: var(--cream);
+      cursor: pointer;
+      padding: 0 11px;
+      gap: 4px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    .menu-btn span {
+      display: block;
+      height: 2px;
+      border-radius: 999px;
+      background: currentColor;
+    }
+
+    .hero {
+      position: relative;
+      padding: 132px 0 72px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(110deg, rgba(7, 16, 24, 0.94) 0%, rgba(7, 16, 24, 0.76) 50%, rgba(7, 16, 24, 0.58) 100%),
+        url('https://assets.cdn.filesafe.space/7BACHlimOjRa4xMD4hlh/media/6939dab5169a42da3a275396.jpeg') center/cover no-repeat;
+      opacity: 0.95;
+      z-index: -2;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: auto -10% -2px -10%;
+      height: 120px;
+      background: linear-gradient(180deg, transparent 0%, rgba(11, 17, 24, 0.7) 100%);
+      z-index: -1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-family: var(--headline);
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: 0.94;
+      letter-spacing: -0.03em;
+      max-width: 11ch;
+    }
+
+    .hero h1 span {
+      color: var(--sand);
+      display: block;
+    }
+
+    .hero p {
+      margin: 22px 0 0;
+      max-width: 640px;
+      color: rgba(232, 237, 242, 0.76);
+      font-size: 1.06rem;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 22px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      text-align: center;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--copper));
+      color: #091018;
+      box-shadow: 0 14px 30px rgba(208, 122, 55, 0.22);
+    }
+
+    .btn-secondary {
+      border-color: rgba(255, 255, 255, 0.12);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--cream);
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .badge {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: rgba(232, 237, 242, 0.82);
+      font-size: 0.88rem;
+    }
+
+    .visual {
+      position: relative;
+      min-height: 640px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-rows: 1.1fr 0.9fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .visual-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .visual-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: scale(1.01);
+    }
+
+    .visual-main {
+      grid-row: 1 / span 2;
+      min-height: 640px;
+    }
+
+    .visual-top { min-height: 312px; }
+    .visual-bottom { min-height: 312px; }
+
+    .visual-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 35%, rgba(4, 10, 14, 0.82) 100%);
+    }
+
+    .visual-label {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 16px;
+      z-index: 1;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .visual-label strong {
+      display: block;
+      font-size: 1.05rem;
+      margin-bottom: 4px;
+    }
+
+    .visual-label span {
+      display: block;
+      font-size: 0.86rem;
+      color: rgba(232, 237, 242, 0.74);
+    }
+
+    .floating-stat {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      z-index: 2;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(7, 16, 24, 0.74);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      max-width: 210px;
+    }
+
+    .floating-stat strong {
+      display: block;
+      font-size: 1.02rem;
+      margin-bottom: 4px;
+    }
+
+    .floating-stat span {
+      color: rgba(232, 237, 242, 0.72);
+      font-size: 0.84rem;
+      line-height: 1.5;
+    }
+
+    .strip {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .strip-card {
+      padding: 18px 18px 16px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .strip-card strong {
+      display: block;
+      font-size: 1.02rem;
+      margin-bottom: 8px;
+    }
+
+    .strip-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-alt {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+    }
+
+    .section-dark {
+      background: linear-gradient(180deg, rgba(5, 11, 16, 0) 0%, rgba(5, 11, 16, 0.36) 100%);
+    }
+
+    .section-head {
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .section-head h2 {
+      margin: 10px 0 0;
+      font-family: var(--headline);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+      max-width: 12ch;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 560px;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: rgba(199, 154, 91, 0.1);
+      color: var(--sand);
+      border: 1px solid rgba(199, 154, 91, 0.18);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .division-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .division-card {
+      overflow: hidden;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .division-media {
+      position: relative;
+      min-height: 310px;
+    }
+
+    .division-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .division-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 30%, rgba(6, 12, 17, 0.82) 100%);
+    }
+
+    .division-pill {
+      position: absolute;
+      left: 18px;
+      top: 18px;
+      z-index: 1;
+      padding: 10px 13px;
+      border-radius: 999px;
+      background: rgba(7, 16, 24, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .division-content {
+      padding: 28px;
+    }
+
+    .division-content h3 {
+      margin: 0;
+      font-family: var(--headline);
+      font-size: 2rem;
+      line-height: 1.05;
+    }
+
+    .division-content p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .points {
+      display: grid;
+      gap: 12px;
+      margin: 22px 0 26px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .points li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: rgba(232, 237, 242, 0.84);
+      line-height: 1.6;
+    }
+
+    .points li::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      margin-top: 0.52rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--gold), var(--copper));
+      flex: 0 0 8px;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .result-panel {
+      border-radius: 28px;
+      overflow: hidden;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .result-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .result-item {
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .result-item strong {
+      display: block;
+      font-size: 1.06rem;
+      margin-bottom: 10px;
+    }
+
+    .result-item p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.94rem;
+    }
+
+    .result-media {
+      position: relative;
+      min-height: 100%;
+      height: 100%;
+    }
+
+    .result-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .result-media::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(6, 12, 17, 0.72) 100%);
+    }
+
+    .result-media-copy {
+      position: absolute;
+      inset: auto 22px 22px 22px;
+      z-index: 1;
+      display: grid;
+      gap: 10px;
+    }
+
+    .result-media-copy strong {
+      font-size: 1.55rem;
+      font-family: var(--headline);
+      line-height: 1.05;
+    }
+
+    .result-media-copy span {
+      color: rgba(232, 237, 242, 0.74);
+      max-width: 28ch;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .step {
+      padding: 24px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      min-height: 180px;
+    }
+
+    .step span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--gold), var(--copper));
+      color: #091018;
+      font-weight: 900;
+      margin-bottom: 16px;
+    }
+
+    .step h3 {
+      margin: 0 0 10px;
+      font-size: 1.05rem;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.94rem;
+    }
+
+    .cta {
+      padding: 88px 0 104px;
+    }
+
+    .cta-box {
+      padding: 42px;
+      border-radius: 32px;
+      background:
+        linear-gradient(135deg, rgba(199, 154, 91, 0.16), rgba(208, 122, 55, 0.1)),
+        rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: var(--shadow);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .cta-box h2 {
+      margin: 0;
+      font-family: var(--headline);
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1;
+      max-width: 12ch;
+    }
+
+    .cta-box p {
+      margin: 14px 0 0;
+      max-width: 60ch;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      min-width: 260px;
+    }
+
+    .footer {
+      padding: 30px 0 46px;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      color: rgba(232, 237, 242, 0.58);
+      font-size: 0.88rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover { color: var(--cream); }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1024px) {
+      .hero-grid, .results-grid, .cta-box { grid-template-columns: 1fr; }
+      .visual { min-height: 560px; }
+      .result-list, .process-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 780px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 20px;
+        right: 20px;
+        flex-direction: column;
+        gap: 14px;
+        padding: 18px;
+        border-radius: 20px;
+        background: rgba(7, 16, 24, 0.96);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        backdrop-filter: blur(18px);
+      }
+
+      .nav-links.open { display: flex; }
+      .menu-btn { display: flex; }
+      .brand-copy span { display: none; }
+      .hero { padding-top: 116px; }
+      .visual { grid-template-columns: 1fr; min-height: auto; }
+      .visual-main, .visual-top, .visual-bottom { min-height: 260px; }
+      .strip, .division-grid, .result-list, .process-grid { grid-template-columns: 1fr; }
+      .cta-box { padding: 30px; }
+      .cta-actions { min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" id="navbar">
+    <div class="nav-inner">
+      <a class="logo" href="#top" aria-label="Bertin Coaching home">
+        <img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_400/u_https://assets.cdn.filesafe.space/7BACHlimOjRa4xMD4hlh/media/68b4e70f09148040d5365cf4.png" alt="Bertin Coaching logo" />
+        <div class="brand-copy">
+          <strong>Bertin Coaching</strong>
+          <span>Competition prep and lifestyle coaching</span>
+        </div>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#divisions">Divisions</a></li>
+        <li><a href="#results">Results</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="https://bertincoaching.com/apply" class="nav-cta">Apply Now</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="fade-up">
+            <div class="eyebrow">Premium coaching for serious people</div>
+            <h1>Built for athletes, <span>and built for lifestyle change</span></h1>
+            <p>
+              Bertin Coaching delivers clear structure, intelligent programming, and accountability for two distinct paths,
+              competition prep and lifestyle transformation. The standard stays the same, real coaching, real results.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://bertincoaching.com/athletes-application-form">Apply for Athletes</a>
+              <a class="btn btn-secondary" href="https://bertincoaching.com/lifestyle-booking">Explore Lifestyle Coaching</a>
+            </div>
+
+            <div class="hero-badges">
+              <div class="badge">Competition prep</div>
+              <div class="badge">Lifestyle division</div>
+              <div class="badge">Bilingual support</div>
+              <div class="badge">Weekly check-ins</div>
+            </div>
+          </div>
+
+          <div class="visual fade-up">
+            <div class="visual-card visual-main">
+              <img src="https://drive.google.com/thumbnail?id=18JefTXqNRKDmeY_u73CIuZBSwviS2nuC&sz=w1600" alt="Athlete posing on stage" />
+              <div class="floating-stat">
+                <strong>Precision over hype</strong>
+                <span>Everything is built around the client, the division, and the outcome they actually want.</span>
+              </div>
+              <div class="visual-label">
+                <div>
+                  <strong>Stage and physique readiness</strong>
+                  <span>For athletes who want a cleaner, sharper prep.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="visual-card visual-top">
+              <img src="https://drive.google.com/thumbnail?id=1WrpmfJ5EYswMkwKg_l9ATnBvBYj2MPb5&sz=w1600" alt="Athlete training in a gym" />
+              <div class="visual-label">
+                <div>
+                  <strong>Athlete division</strong>
+                  <span>Contest prep, offseason, peak week.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="visual-card visual-bottom">
+              <img src="https://drive.google.com/thumbnail?id=16pvmmtNiUxWLyPcwXDvq0Rr2SIXTSIRu&sz=w1600" alt="Coach and athlete preparing backstage" />
+              <div class="visual-label">
+                <div>
+                  <strong>Lifestyle division</strong>
+                  <span>Body recomposition with sustainability.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="strip fade-up">
+          <div class="strip-card">
+            <strong>For people who want structure</strong>
+            <p>Clear targets, weekly accountability, and coaching that stays tight without feeling chaotic.</p>
+          </div>
+          <div class="strip-card">
+            <strong>For athletes and non-athletes</strong>
+            <p>Two divisions, one premium experience. Build for stage, or build for the life you actually live.</p>
+          </div>
+          <div class="strip-card">
+            <strong>For better results</strong>
+            <p>More than generic training, this is a system that adapts, refines, and keeps moving.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="divisions">
+      <div class="container">
+        <div class="section-head fade-up">
+          <div>
+            <div class="section-tag">Two divisions</div>
+            <h2>Choose the lane that matches the goal</h2>
+          </div>
+          <p>
+            The site should make this obvious fast. Athletes get a prep-first message, lifestyle clients get a different promise,
+            and both see a premium standard from the first scroll.
+          </p>
+        </div>
+
+        <div class="division-grid">
+          <article class="division-card fade-up">
+            <div class="division-media">
+              <img src="https://drive.google.com/thumbnail?id=1yBKPBre4Yk5KSB38W0gy0cwkqyXFKGtJ&sz=w1600" alt="Bodybuilder athlete in contest prep" />
+              <div class="division-pill">Athletes</div>
+            </div>
+            <div class="division-content">
+              <h3>Competition Prep Coaching</h3>
+              <p>
+                For athletes who want structure, sharper conditioning, and coaching that understands stage demands.
+                This division is built for prep, offseason control, and the kind of detail that matters when the goal is performance.
+              </p>
+              <ul class="points">
+                <li>Stage prep, offseason, and peak-week support</li>
+                <li>Progress tracking, posing feedback, and adjustments</li>
+                <li>Direct coaching for serious competitors</li>
+              </ul>
+              <div class="card-actions">
+                <a class="btn btn-primary" href="https://bertincoaching.com/athletes-application-form">Athletes application</a>
+                <a class="btn btn-secondary" href="#results">See results</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="division-card fade-up">
+            <div class="division-media">
+              <img src="https://drive.google.com/thumbnail?id=1rBAODFPSIpO13ViqffOXdXwJzcvPrRI1&sz=w1600" alt="Coach and athlete in a briefing moment" />
+              <div class="division-pill">Lifestyle</div>
+            </div>
+            <div class="division-content">
+              <h3>Lifestyle Division</h3>
+              <p>
+                For clients who want body recomposition, better habits, and a plan they can actually sustain.
+                This is where a premium coaching experience meets real life, travel, work, family, and everything in between.
+              </p>
+              <ul class="points">
+                <li>Fat loss, muscle retention, and sustainable recomposition</li>
+                <li>Training and nutrition that fits real life</li>
+                <li>Accountability without the chaos</li>
+              </ul>
+              <div class="card-actions">
+                <a class="btn btn-primary" href="https://bertincoaching.com/lifestyle-booking">Lifestyle booking</a>
+                <a class="btn btn-secondary" href="#process">How it works</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="results">
+      <div class="container">
+        <div class="section-head fade-up">
+          <div>
+            <div class="section-tag">Results</div>
+            <h2>Better outcomes, clearer proof</h2>
+          </div>
+          <p>
+            Instead of copying the usual busy gym-site style, this version centers the outcome, cleaner physique, stronger structure,
+            and a premium coaching relationship people can trust.
+          </p>
+        </div>
+
+        <div class="results-grid">
+          <div class="result-list fade-up">
+            <div class="result-item">
+              <strong>Sharper stage readiness</strong>
+              <p>For athletes, the promise is simple, better prep, better presentation, and more control in the process.</p>
+            </div>
+            <div class="result-item">
+              <strong>Sustainable recomposition</strong>
+              <p>For lifestyle clients, the goal is to look better and feel better without turning life into a full-time diet.</p>
+            </div>
+            <div class="result-item">
+              <strong>More coaching clarity</strong>
+              <p>Weekly structure, direct feedback, and a system that keeps people moving in the right direction.</p>
+            </div>
+          </div>
+
+          <div class="result-panel fade-up">
+            <div class="result-media">
+              <img src="https://drive.google.com/thumbnail?id=1u7aYRNb0xbP2NkwKjaBBGUS6jXBIjuKZ&sz=w1600" alt="Athlete posing confidently" />
+              <div class="result-media-copy">
+                <strong>Results that feel premium</strong>
+                <span>Less noise, more visible progress. That’s the energy this site should communicate from the first glance.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="container">
+        <div class="section-head fade-up">
+          <div>
+            <div class="section-tag">Process</div>
+            <h2>A simple path from interest to coaching</h2>
+          </div>
+          <p>
+            The experience should feel organized and easy to buy into. This keeps the focus on trust, outcomes, and the right next step.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="step fade-up">
+            <span>01</span>
+            <h3>Apply</h3>
+            <p>Select the division that fits, athlete or lifestyle, and submit the form.</p>
+          </div>
+          <div class="step fade-up">
+            <span>02</span>
+            <h3>Review</h3>
+            <p>Coach reviews goals, current habits, and where the biggest leverage points are.</p>
+          </div>
+          <div class="step fade-up">
+            <span>03</span>
+            <h3>Build</h3>
+            <p>Programming gets tailored to the client, their schedule, and their outcome.</p>
+          </div>
+          <div class="step fade-up">
+            <span>04</span>
+            <h3>Execute</h3>
+            <p>Weekly support keeps momentum high and adjustments moving at the right pace.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box fade-up">
+          <div>
+            <div class="section-tag">Ready</div>
+            <h2>Make the next version of this site feel elite</h2>
+            <p>
+              I can keep tightening the copy, build a stronger visual system, or turn this into a more conversion-focused landing page with a sharper athlete-first story.
+            </p>
+          </div>
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="https://bertincoaching.com/athletes-application-form">Apply for Athletes</a>
+            <a class="btn btn-secondary" href="https://bertincoaching.com/lifestyle-booking">Explore Lifestyle Coaching</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© 2026 Bertin Coaching</div>
+      <div class="footer-links">
+        <a href="#divisions">Divisions</a>
+        <a href="#results">Results</a>
+        <a href="https://www.instagram.com/lola.longevity/" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="https://bertincoaching.com/apply">Apply</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('navbar');
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 18);
+    });
+
+    menuBtn?.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>
