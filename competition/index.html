@@ -4,35 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Competition Coaching | Bertin Coaching - Built to Win</title>
-  <meta name="description" content="Elite competition prep coaching for athletes who want to win. Stage-ready results with direct oversight from Sebastien Bertin. Applications reviewed within 24 hours." />
+  <meta name="description" content="Elite competition prep coaching for athletes who want to win. Stage-ready results with direct oversight from Sebastien Bertin." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg: #071018;
-      --bg-soft: #0d1821;
-      --panel: #111f2b;
+      --bg: #050a14;
+      --bg-soft: #0a1420;
+      --panel: #0f1a2c;
       --line: rgba(255,255,255,0.08);
       --cream: #f6f1ea;
-      --sand: #d7c8b2;
-      --text: #e8edf2;
-      --muted: rgba(232,237,242,0.68);
-      --gold: #c79a5b;
-      --copper: #d07a37;
-      --radius: 28px;
+      --text: #e8f0f8;
+      --muted: rgba(200,220,240,0.65);
+      --orange: #f25c2a;
+      --orange-light: #ff7a4d;
+      --orange-dark: #c94a1f;
+      --radius: 24px;
       --headline: 'Playfair Display',serif;
       --body: 'Inter',system-ui,sans-serif;
     }
     *,*::before,*::after{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:var(--body);color:var(--text);background:radial-gradient(circle at top left,rgba(199,154,91,0.14),transparent 28%),radial-gradient(circle at 85% 10%,rgba(208,122,55,0.12),transparent 22%),linear-gradient(180deg,#050b10 0%,#09121a 30%,#0a1118 100%);overflow-x:hidden}
+    body{margin:0;font-family:var(--body);color:var(--text);background:radial-gradient(circle at 70% 0%,rgba(242,92,42,0.12),transparent 50%),radial-gradient(circle at 20% 10%,rgba(255,122,77,0.08),transparent 35%),linear-gradient(180deg,#020814 0%,#050d1a 40%,#0a1422 100%);overflow-x:hidden}
     img{display:block;width:100%;height:auto}
     a{color:inherit;text-decoration:none}
     button{font:inherit;cursor:pointer}
     .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
     .nav{position:fixed;inset:0 0 auto 0;z-index:50;padding:18px 0;transition:background .25s,border-color .25s,box-shadow .25s}
-    .nav.scrolled{background:rgba(7,16,24,0.92);backdrop-filter:blur(18px);box-shadow:0 10px 40px rgba(0,0,0,0.24);border-bottom:1px solid rgba(255,255,255,0.06)}
+    .nav.scrolled{background:rgba(5,10,20,0.95);backdrop-filter:blur(18px);box-shadow:0 10px 40px rgba(0,0,0,0.24);border-bottom:1px solid rgba(255,255,255,0.06)}
     .nav-inner{width:min(1180px,calc(100% - 40px));margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
     .logo{display:inline-flex;align-items:center;gap:14px;min-width:0}
     .logo img{width:52px;height:52px;object-fit:contain;border-radius:14px;background:rgba(255,255,255,0.04);padding:6px;border:1px solid rgba(255,255,255,0.05)}
@@ -40,56 +40,60 @@
     .brand-copy strong{font-size:0.98rem;letter-spacing:0.02em}
     .brand-copy span{font-size:0.78rem;color:var(--muted)}
     .nav-links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0}
-    .nav-links a{color:rgba(232,237,242,0.78);font-size:0.92rem;font-weight:500;transition:color .2s}
+    .nav-links a{color:rgba(200,220,240,0.8);font-size:0.92rem;font-weight:500;transition:color .2s}
     .nav-links a:hover{color:var(--cream)}
-    .nav-cta{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:15px;background:linear-gradient(135deg,var(--gold),var(--copper));color:#091018!important;font-weight:800!important;box-shadow:0 12px 30px rgba(199,154,91,0.24)}
+    .nav-cta{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:15px;background:linear-gradient(135deg,var(--orange-light),var(--orange));color:#050a10!important;font-weight:800!important;box-shadow:0 12px 30px rgba(242,92,42,0.35)}
+    .menu-btn{display:none;width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);color:var(--cream);flex-direction:column;justify-content:center;align-items:center;gap:4px;padding:0}
+    .menu-btn span{display:block;width:20px;height:2px;border-radius:2px;background:currentColor}
+    .mobile-menu{display:none;position:fixed;top:80px;left:20px;right:20px;background:rgba(5,10,20,0.98);border:1px solid var(--line);border-radius:15px;padding:20px;z-index:100}
+    .mobile-menu.active{display:block}
+    .mobile-menu a{display:block;padding:14px 0;color:var(--text);font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
+    .mobile-menu a:last-child{border-bottom:none}
     .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 26px;border-radius:15px;border:1px solid transparent;font-weight:700;font-size:0.95rem;transition:transform .2s,box-shadow .2s,background .2s;text-align:center}
     .btn:hover{transform:translateY(-2px)}
-    .btn-primary{background:linear-gradient(135deg,var(--gold),var(--copper));color:#091018;box-shadow:0 14px 30px rgba(208,122,55,0.22)}
+    .btn-primary{background:linear-gradient(135deg,var(--orange-light),var(--orange));color:#050a10;box-shadow:0 14px 30px rgba(242,92,42,0.35)}
     .btn-secondary{border-color:rgba(255,255,255,0.14);background:rgba(255,255,255,0.04);color:var(--cream)}
     .btn-large{min-height:60px;padding:0 32px;font-size:1rem}
-    .hero{padding:160px 0 100px;text-align:center;position:relative;background:radial-gradient(ellipse at 50% 0%,rgba(199,154,91,0.12) 0%,transparent 60%)}
-    .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:15px;background:rgba(199,154,91,0.15);border:1px solid rgba(199,154,91,0.3);color:var(--sand);font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:24px}
-    .hero h1{margin:0 auto;font-family:var(--headline);font-size:clamp(3rem,7vw,6rem);line-height:1;line-height:0.95;letter-spacing:-0.02em}
-    .hero h1 span{display:block;color:var(--gold)}
+    .hero{padding:160px 0 80px;text-align:center;position:relative;background:radial-gradient(ellipse at 50% 0%,rgba(242,92,42,0.1) 0%,transparent 60%)}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:15px;background:rgba(242,92,42,0.15);border:1px solid rgba(242,92,42,0.3);color:#ff9a72;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:24px}
+    .hero h1{margin:0 auto;font-family:var(--headline);font-size:clamp(3rem,7vw,6rem);line-height:0.95;letter-spacing:-0.02em}
+    .hero h1 span{display:block;color:var(--orange)}
     .hero-subheadline{margin:28px auto 0;max-width:620px;color:var(--muted);font-size:1.2rem;line-height:1.7}
-    .proof-bar{display:flex;justify-content:center;gap:40px;margin:40px 0;font-size:0.95rem;color:rgba(232,237,242,0.9)}
-    .proof-bar strong{color:var(--cream);font-weight:700;display:block;font-size:1.6rem;margin-bottom:4px}
+    .proof-bar{display:flex;justify-content:center;gap:40px;margin:40px 0;font-size:0.95rem;color:rgba(200,220,240,0.9)}
+    .proof-bar strong{color:#ff9a72;font-weight:700;display:block;font-size:1.6rem;margin-bottom:4px}
     .hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:20px}
     .hero-note{margin-top:16px;font-size:0.85rem;color:var(--muted)}
+    .hero-image{margin-top:50px;max-width:900px;margin-left:auto;margin-right:auto}
     .section{padding:100px 0}
     .section-alt{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0))}
-    .section-dark{background:linear-gradient(180deg,rgba(5,11,16,0) 0%,rgba(5,11,16,0.5) 100%)}
+    .section-dark{background:linear-gradient(180deg,rgba(5,11,20,0) 0%,rgba(5,11,20,0.5) 100%)}
     .section-head{text-align:center;margin-bottom:60px}
     .section-head h2{margin:0 0 16px;font-family:var(--headline);font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-0.02em}
     .section-head p{margin:0 auto;max-width:620px;color:var(--muted);line-height:1.7;font-size:1.05rem}
-    .expectations{border:1px solid rgba(199,154,91,0.2);border-radius:var(--radius);padding:48px;max-width:900px;margin:0 auto;background:rgba(199,154,91,0.03)}
-    .expectations h3{font-family:var(--headline);font-size:1.6rem;margin:0 0 28px;color:var(--gold);text-align:center}
+    .expectations{border:1px solid rgba(242,92,42,0.25);border-radius:var(--radius);padding:48px;max-width:900px;margin:0 auto;background:rgba(242,92,42,0.04)}
+    .expectations h3{font-family:var(--headline);font-size:1.6rem;margin:0 0 28px;color:var(--orange);text-align:center}
     .exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 40px}
     .exp-item{padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
-    .exp-item strong{display:block;color:var(--cream);margin-bottom:6px;font-size:1rem}
+    .exp-item strong{display:block;color:#ff9a72;margin-bottom:6px;font-size:1rem}
     .exp-item span{color:var(--muted);font-size:0.92rem}
     .system-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
     .system-card{padding:32px 24px;border-radius:15px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);text-align:center}
-    .system-card .num{width:48px;height:48px;margin:0 auto 16px;border-radius:15px;background:linear-gradient(135deg,var(--gold),var(--copper));color:#091018;font-weight:900;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
+    .system-card .num{width:48px;height:48px;margin:0 auto 16px;border-radius:15px;background:linear-gradient(135deg,var(--orange-light),var(--orange));color:#050a10;font-weight:900;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
     .system-card h3{margin:0 0 10px;font-size:1.05rem;font-weight:700}
     .system-card p{margin:0;color:var(--muted);font-size:0.9rem;line-height:1.6}
     .results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;margin-top:40px}
     .result-item{padding:28px 20px;border-radius:15px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06)}
-    .result-item strong{display:block;font-size:2.2rem;color:var(--gold);margin-bottom:8px;font-family:var(--headline)}
+    .result-item strong{display:block;font-size:2.2rem;color:var(--orange);margin-bottom:8px;font-family:var(--headline)}
     .result-item span{color:var(--muted);font-size:0.9rem}
-    .menu-btn{display:none;width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);color:var(--cream);flex-direction:column;justify-content:center;align-items:center;gap:4px;padding:0}
-    .menu-btn span{display:block;width:20px;height:2px;border-radius:2px;background:currentColor}
-    .mobile-menu{display:none;position:fixed;top:80px;left:20px;right:20px;background:rgba(7,16,24,0.98);border:1px solid var(--line);border-radius:15px;padding:20px;z-index:100}
-    .mobile-menu.active{display:block}
-    .mobile-menu a{display:block;padding:14px 0;color:var(--text);font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
-    .mobile-menu a:last-child{border-bottom:none}
-    .final-cta{padding:100px 0;text-align:center;background:linear-gradient(180deg,rgba(199,154,91,0.08) 0%,transparent 100%);border-top:1px solid rgba(199,154,91,0.15)}
+    .image-placeholder{width:100%;aspect-ratio:16/9;border-radius:15px;background:linear-gradient(135deg,rgba(122,184,255,0.08),rgba(242,92,42,0.05));border:2px dashed rgba(122,184,255,0.25);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+    .image-placeholder::before{content:'IMAGE PLACEHOLDER';font-size:0.85rem;letter-spacing:0.1em;color:rgba(122,184,255,0.5);font-weight:600}
+    .image-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:50px}
+    .final-cta{padding:100px 0;text-align:center;background:linear-gradient(180deg,rgba(242,92,42,0.1) 0%,transparent 100%);border-top:1px solid rgba(242,92,42,0.2)}
     .final-cta h2{font-family:var(--headline);font-size:clamp(2rem,4vw,3rem);margin:0 0 20px}
     .final-cta p{max-width:520px;margin:0 auto 32px;color:var(--muted);font-size:1.1rem;line-height:1.7}
     footer{padding:50px 0;text-align:center;border-top:1px solid rgba(255,255,255,0.06)}
     footer p{margin:0;color:var(--muted);font-size:0.9rem}
-    @media(max-width:900px){.nav-links{display:none}.menu-btn{display:flex}.exp-grid{grid-template-columns:1fr}.system-grid{grid-template-columns:1fr 1fr}.results-grid{grid-template-columns:1fr 1fr}.proof-bar{flex-direction:column;gap:20px}}
+    @media(max-width:900px){.nav-links{display:none}.menu-btn{display:flex}.exp-grid{grid-template-columns:1fr}.system-grid{grid-template-columns:1fr 1fr}.results-grid{grid-template-columns:1fr 1fr}.image-gallery{grid-template-columns:1fr}.proof-bar{flex-direction:column;gap:20px}}
     @media(max-width:600px){.system-grid{grid-template-columns:1fr}.results-grid{grid-template-columns:1fr}.expectations{padding:32px 24px}}
   </style>
 </head>
@@ -124,16 +128,19 @@
       <h1>Built <span>to Win</span></h1>
       <p class="hero-subheadline">Elite competition prep for athletes who refuse to settle for participation. If you're serious about stepping on stage and competing at the highest level, this is your system.</p>
       <div class="proof-bar">
-        <div><strong>8+</strong> Pro Cards Earned</div>
-        <div><strong>100+</strong> Stage Placings</div>
-        <div><strong>Multiple</strong> First Place Wins</div>
-        <div><strong>100%</strong> Commitment Required</div>
+        <div><strong>8+</strong>Pro Cards Earned</div>
+        <div><strong>100+</strong>Stage Placings</div>
+        <div><strong>Multiple</strong>First Place Wins</div>
+        <div><strong>100%</strong>Commitment Required</div>
       </div>
       <div class="hero-actions">
         <a href="https://bertincoaching.com/athletes-application-form" class="btn btn-primary btn-large">Apply as an Athlete</a>
         <a href="#system" class="btn btn-secondary btn-large">View the System</a>
       </div>
       <p class="hero-note">Applications reviewed within 24 hours. Limited spots available.</p>
+      <div class="hero-image">
+        <div class="image-placeholder"></div>
+      </div>
     </div>
   </section>
 
@@ -214,12 +221,12 @@
       </div>
       <div class="expectations" style="background:rgba(255,255,255,0.02);border-color:var(--line);">
         <div class="exp-grid">
-          <div class="exp-item"><strong>Personalized Training Programs</strong><span>Periodized for contest prep and muscle retention.</span></div>
-          <div class="exp-item"><strong>Precision Nutrition Protocols</strong><span>Macro-managed with weekly adjustments.</span></div>
-          <div class="exp-item"><strong>Supplement Strategy</strong><span>Evidence-based protocols for performance and conditioning.</span></div>
-          <div class="exp-item"><strong>Posing &amp; Presentation</strong><span>Division-specific posing coaching and stage presence.</span></div>
-          <div class="exp-item"><strong>Peak Week Management</strong><span>Water, sodium, carb manipulation — executed perfectly.</span></div>
-          <div class="exp-item"><strong>24/7 Access</strong><span>Direct line for urgent questions during prep.</span></div>
+          <div class="exp-item"><strong style="color:#7ab8ff;">Personalized Training Programs</strong><span>Periodized for contest prep and muscle retention.</span></div>
+          <div class="exp-item"><strong style="color:#7ab8ff;">Precision Nutrition Protocols</strong><span>Macro-managed with weekly adjustments.</span></div>
+          <div class="exp-item"><strong style="color:#7ab8ff;">Supplement Strategy</strong><span>Evidence-based protocols for performance and conditioning.</span></div>
+          <div class="exp-item"><strong style="color:#7ab8ff;">Posing &amp; Presentation</strong><span>Division-specific posing coaching and stage presence.</span></div>
+          <div class="exp-item"><strong style="color:#7ab8ff;">Peak Week Management</strong><span>Water, sodium, carb manipulation — executed perfectly.</span></div>
+          <div class="exp-item"><strong style="color:#7ab8ff;">24/7 Access</strong><span>Direct line for urgent questions during prep.</span></div>
         </div>
       </div>
     </div>
@@ -236,6 +243,11 @@
         <div class="result-item"><strong>100+</strong><span>Stage Placings</span></div>
         <div class="result-item"><strong>Multiple</strong><span>Overall Wins</span></div>
         <div class="result-item"><strong>100%</strong><span>Dedication Required</span></div>
+      </div>
+      <div class="image-gallery">
+        <div class="image-placeholder" style="aspect-ratio:3/4;"></div>
+        <div class="image-placeholder" style="aspect-ratio:3/4;"></div>
+        <div class="image-placeholder" style="aspect-ratio:3/4;"></div>
       </div>
     </div>
   </section>
