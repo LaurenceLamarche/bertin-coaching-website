@@ -7,7 +7,7 @@
   <meta name="description" content="Premium lifestyle coaching for driven individuals who want to lose fat, regain control, and build a physique that lasts. Structured, data-driven coaching." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --bg: #050a14;
@@ -22,7 +22,7 @@
       --orange-dark: #c94a1f;
       --radius: 24px;
       --radius-sm: 15px;
-      --headline: 'Playfair Display',serif;
+      --headline: 'Helvetica Neue', Helvetica, Arial, sans-serif;
       --body: 'Inter',system-ui,sans-serif;
     }
     *,*::before,*::after{box-sizing:border-box}
@@ -61,10 +61,10 @@
     .btn-large{min-height:60px;padding:0 32px;font-size:1rem}
 
     /* HERO */
-    .hero{padding:160px 0 100px;text-align:center;position:relative;background:radial-gradient(ellipse at 50% 0%,rgba(199,154,91,0.08) 0%,transparent 60%)}
-    .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:15px;background:rgba(215,200,178,0.12);border:1px solid rgba(215,200,178,0.2);color:var(--sand);font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:24px}
-    .hero h1{margin:0 auto;font-family:var(--headline);font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.05;letter-spacing:-0.02em;max-width:16ch}
-    .hero h1 span{display:block;color:var(--sand)}
+    .hero{padding:160px 0 100px;text-align:center;position:relative;background:radial-gradient(ellipse at 50% 0%,rgba(242,92,42,0.1) 0%,transparent 60%)}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:15px;background:rgba(242,92,42,0.12);border:1px solid rgba(242,92,42,0.25);color:#ff9a72;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:24px}
+    .hero h1{margin:0 auto;font-family:var(--headline);font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.05;letter-spacing:-0.03em;font-weight:700}
+    .hero h2{margin:12px auto 0;font-family:var(--headline);font-size:clamp(1.6rem,3.5vw,2.8rem);line-height:1.1;letter-spacing:-0.02em;font-weight:600;color:#ff9a72}
     .hero-subheadline{margin:28px auto 0;max-width:620px;color:var(--muted);font-size:1.15rem;line-height:1.7}
     .hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:36px}
     .hero-micro{margin-top:20px;font-size:0.85rem;color:var(--muted)}
@@ -74,12 +74,12 @@
     .section-alt{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0))}
     .section-dark{background:linear-gradient(180deg,rgba(5,11,16,0) 0%,rgba(5,11,16,0.5) 100%)}
     .section-head{text-align:center;margin-bottom:60px}
-    .section-head h2{margin:0 0 16px;font-family:var(--headline);font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-0.02em}
+    .section-head h2{margin:0 0 16px;font-family:var(--headline);font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-0.02em;font-weight:700}
     .section-head p{margin:0 auto;max-width:620px;color:var(--muted);line-height:1.7;font-size:1.05rem}
 
     /* CALLOUT */
     .callout-box{max-width:800px;margin:0 auto;padding:48px;border-radius:var(--radius);background:rgba(215,200,178,0.05);border:1px solid rgba(215,200,178,0.15);text-align:center}
-    .callout-box h3{font-family:var(--headline);font-size:1.5rem;color:var(--sand);margin:0 0 24px}
+    .callout-box h3{font-family:var(--headline);font-size:1.5rem;color:#ff9a72;margin:0 0 24px}
     .callout-box p{font-size:1.1rem;line-height:1.8;color:var(--text);margin:0 0 20px}
     .callout-box ul{list-style:none;padding:0;margin:0;display:inline-block;text-align:left}
     .callout-box ul li{padding:10px 0;padding-left:28px;position:relative;font-size:1rem;color:var(--muted)}
@@ -101,12 +101,12 @@
     .method-card .num{width:48px;height:48px;margin:0 auto 18px;border-radius:15px;background:linear-gradient(135deg,var(--orange),var(--orange));color:#050a10;font-weight:900;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
     .method-card h3{margin:0 0 10px;font-size:1.05rem;font-weight:700}
     .method-card p{margin:0;color:var(--muted);font-size:0.92rem;line-height:1.65}
-    .method-tagline{text-align:center;margin:40px auto 0;max-width:500px;font-size:1.15rem;font-style:italic;color:var(--sand)}
+    .method-tagline{text-align:center;margin:40px auto 0;max-width:500px;font-size:1.15rem;font-style:italic;color:#ff9a72}
 
     /* PROMISE */
     .promise-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto}
     .promise-card{padding:36px 32px;border-radius:15px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06)}
-    .promise-card h4{margin:0 0 12px;font-size:1.1rem;color:var(--sand)}
+    .promise-card h4{margin:0 0 12px;font-size:1.1rem;color:#ff9a72}
     .promise-card p{margin:0;color:var(--muted);font-size:0.95rem;line-height:1.6}
     .promise-highlight{max-width:700px;margin:40px auto 0;text-align:center;padding:28px 32px;border-radius:15px;background:rgba(215,200,178,0.08);border:1px solid rgba(215,200,178,0.15)}
     .promise-highlight p{margin:0;font-size:1.1rem;color:var(--text);font-style:italic}
@@ -123,7 +123,7 @@
     .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1000px;margin:0 auto}
     .why-col h4{margin:0 0 20px;font-size:1.1rem;letter-spacing:0.1em;text-transform:uppercase}
     .why-col.others h4{color:rgba(232,237,242,0.5)}
-    .why-col.us h4{color:var(--sand)}
+    .why-col.us h4{color:#ff9a72}
     .why-list{list-style:none;padding:0;margin:0}
     .why-list li{padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:1rem;color:rgba(232,237,242,0.7)}
     .why-list li:last-child{border-bottom:none}
@@ -133,7 +133,7 @@
     .exp-two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:0 auto}
     .exp-card{padding:36px;border-radius:var(--radius);background:rgba(255,255,255,0.02);border:1px solid var(--line)}
     .exp-card h4{margin:0 0 20px;font-size:1rem;letter-spacing:0.1em;text-transform:uppercase}
-    .exp-card.expect h4{color:var(--sand)}
+    .exp-card.expect h4{color:#ff9a72}
     .exp-card.receive h4{color:var(--orange)}
     .exp-list{list-style:none;padding:0;margin:0}
     .exp-list li{padding:10px 0;font-size:0.95rem;color:rgba(232,237,242,0.85)}
@@ -144,7 +144,7 @@
     /* FILTER */
     .filter-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
     .filter-card{padding:40px;border-radius:var(--radius);background:rgba(255,255,255,0.02);border:1px solid var(--line)}
-    .filter-card.for h4{color:var(--sand);margin:0 0 20px;font-size:1rem;letter-spacing:0.1em;text-transform:uppercase}
+    .filter-card.for h4{color:#ff9a72;margin:0 0 20px;font-size:1rem;letter-spacing:0.1em;text-transform:uppercase}
     .filter-card.not h4{color:rgba(232,237,242,0.5);margin:0 0 20px;font-size:1rem;letter-spacing:0.1em;text-transform:uppercase}
     .filter-list{list-style:none;padding:0;margin:0}
     .filter-list li{padding:10px 0;font-size:0.95rem;color:rgba(232,237,242,0.85)}
@@ -157,10 +157,10 @@
     .final-cta p.note{margin-top:20px;font-size:0.85rem;color:var(--muted)}
 
     /* DIFFERENCE BOX */
-    .difference-box{max-width:800px;margin:0 auto;padding:48px;border-radius:var(--radius);background:linear-gradient(180deg,rgba(199,154,91,0.08),rgba(199,154,91,0.03));border:1px solid rgba(199,154,91,0.2);text-align:center}
+    .difference-box{max-width:800px;margin:0 auto;padding:48px;border-radius:var(--radius);background:linear-gradient(180deg,rgba(242,92,42,0.1),rgba(199,154,91,0.03));border:1px solid rgba(199,154,91,0.2);text-align:center}
     .difference-box h3{font-family:var(--headline);font-size:1.6rem;margin:0 0 20px;color:var(--orange)}
     .difference-box p{margin:0 0 16px;font-size:1.15rem;line-height:1.8;color:var(--text)}
-    .difference-box .final-line{margin-top:24px;padding-top:24px;border-top:1px solid rgba(199,154,91,0.15);font-size:1.3rem;font-weight:600;color:var(--sand)}
+    .difference-box .final-line{margin-top:24px;padding-top:24px;border-top:1px solid rgba(199,154,91,0.15);font-size:1.3rem;font-weight:600;color:#ff9a72}
 
     footer{padding:50px 0;text-align:center;border-top:1px solid rgba(255,255,255,0.06)}
     footer p{margin:0;color:var(--muted);font-size:0.9rem}
@@ -213,7 +213,8 @@
   <section class="hero">
     <div class="container">
       <div class="hero-eyebrow">Lifestyle Coaching</div>
-      <h1>Rebuild Your Body <span>With a System That Actually Works</span></h1>
+      <h1>Rebuild Your Body</h1>
+      <h2>With a System That Actually Works</h2>
       <p class="hero-subheadline">Lifestyle coaching for driven individuals who want to lose fat, regain control, and build a physique that lasts, without starting over every few months.</p>
       <div class="hero-actions">
         <a href="https://bertincoaching.com/lifestyle-booking" class="btn btn-primary btn-large">Apply for Lifestyle Coaching</a>
@@ -393,7 +394,7 @@
         </div>
       </div>
       <div style="text-align:center;margin-top:40px;">
-        <p style="font-size:1.15rem;color:var(--sand);font-style:italic;">This is not a template. This is a system built around you.</p>
+        <p style="font-size:1.15rem;color:#ff9a72;font-style:italic;">This is not a template. This is a system built around you.</p>
       </div>
     </div>
   </section>
