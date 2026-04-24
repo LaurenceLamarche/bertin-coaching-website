@@ -3,90 +3,194 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Results | Bertin Coaching - Proof That Works</title>
+  <title>Results | Bertin Coaching — Proof That Works</title>
   <meta name="description" content="Real results from real clients. Competition wins, lifestyle transformations, and physique improvements that speak for themselves." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    :root{--bg:#071018;--line:rgba(255,255,255,0.08);--cream:#f6f1ea;--sand:#d7c8b2;--text:#e8edf2;--muted:rgba(232,237,242,0.68);--gold:#c79a5b;--copper:#d07a37;--headline:'Helvetica Neue', Helvetica, Arial, sans-serif;--body:'Inter',system-ui,sans-serif}
-    *,*::before,*::after{box-sizing:border-box}
-    body{margin:0;font-family:var(--body);color:var(--text);background:radial-gradient(circle at top left,rgba(199,154,91,0.14),transparent 28%),linear-gradient(180deg,#050b10 0%,#09121a 30%,#0a1118 100%);overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
-    a{color:inherit;text-decoration:none}
-    .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
-    .nav{position:fixed;inset:0 0 auto 0;z-index:50;padding:18px 0}
-    .nav.scrolled{background:rgba(7,16,24,0.92);backdrop-filter:blur(18px)}
-    .nav-inner{width:min(1180px,calc(100% - 40px));margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .logo{display:inline-flex;align-items:center;gap:14px}
-    .logo img{width:52px;height:52px;object-fit:contain;border-radius:14px;background:rgba(255,255,255,0.04);padding:6px;border:1px solid rgba(255,255,255,0.05)}
-    .brand-copy{display:flex;flex-direction:column;line-height:1.1}
-    .brand-copy strong{font-size:0.98rem}
-    .brand-copy span{font-size:0.78rem;color:var(--muted)}
-    .nav-links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0}
-    .nav-links a{color:rgba(232,237,242,0.78);font-size:0.92rem;font-weight:500}
-    .nav-links a:hover{color:var(--cream)}
-    .nav-cta{display:inline-flex;align-items:center;padding:12px 20px;border-radius:15px;background:linear-gradient(135deg,var(--orange),var(--orange));color:#050a10!important;font-weight:800!important}
-    .menu-btn{display:none;width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);color:var(--cream);flex-direction:column;justify-content:center;align-items:center;gap:4px;padding:0}
-    .menu-btn span{display:block;width:20px;height:2px;border-radius:2px;background:currentColor}
-    .mobile-menu{display:none;position:fixed;top:80px;left:20px;right:20px;background:rgba(7,16,24,0.98);border:1px solid var(--line);border-radius:15px;padding:20px;z-index:100}
-    .mobile-menu.active{display:block}
-    .mobile-menu a{display:block;padding:14px 0;color:var(--text);font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
-    .mobile-menu a:last-child{border-bottom:none}
-    .hero{flex:1;padding:180px 0 100px;text-align:center}
-    .hero h1{margin:0 auto;font-family:var(--headline);font-size:clamp(2.5rem,6vw,4rem);line-height:1.05}
-    .hero h1 span{color:var(--orange)}
-    .hero p{margin:20px auto 0;max-width:500px;color:var(--muted);font-size:1.1rem;line-height:1.7}
-    .coming-soon{display:inline-block;margin-top:40px;padding:16px 32px;border-radius:15px;background:rgba(255,255,255,0.04);border:1px solid var(--line);color:var(--muted)}
-    footer{padding:40px 0;text-align:center;border-top:1px solid rgba(255,255,255,0.06)}
-    footer p{margin:0;color:var(--muted);font-size:0.9rem}
-    @media(max-width:900px){.nav-links{display:none}.menu-btn{display:flex}}
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="/" class="logo">
-        <img src="logo-white.jpg" alt="Bertin Coaching" style="width:62px;height:62px;object-fit:contain;background:transparent;padding:0;border:none;">
-      </a>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/competition">Competition</a></li>
-        <li><a href="/lifestyle">Lifestyle</a></li>
-        <li><a href="/results">Results</a></li>
-        <li><a href="/#apply" class="nav-cta">Apply Now</a></li>
-      </ul>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="/">Home</a>
-      <a href="/competition">Competition</a>
-      <a href="/lifestyle">Lifestyle</a>
-      <a href="/results">Results</a>
-      <a href="/#apply">Apply Now</a>
-    </div>
-  </nav>
+  <div class="bg-fx" id="bgFx" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
 
-  <section class="hero">
-    <div class="container">
-      <h1>Results That <span>Speak</span></h1>
-      <p>Competition wins, lifestyle transformations, and proof that the system works. Full gallery coming soon.</p>
-      <div class="coming-soon">Results Gallery — Coming Soon</div>
-    </div>
-  </section>
+  <div class="wrap">
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a href="../" class="logo" aria-label="Bertin Coaching home">
+          <img src="../logo-white.jpg" alt="Bertin Coaching" />
+          <span class="logo-text">Bertin <span style="color:var(--orange)">/</span> Coaching</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="../">Home</a></li>
+          <li><a href="../competition/">Competition</a></li>
+          <li><a href="../lifestyle/">Lifestyle</a></li>
+          <li><a href="../coaches/">Coaches</a></li>
+          <li><a href="../results/" class="active">Results</a></li>
+          <li><a href="../#apply" class="nav-cta">Apply <span class="btn-arrow">→</span></a></li>
+        </ul>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="../">Home</a>
+        <a href="../competition/">Competition</a>
+        <a href="../lifestyle/">Lifestyle</a>
+        <a href="../coaches/">Coaches</a>
+        <a href="../results/">Results</a>
+        <a href="../#apply">Apply Now</a>
+      </div>
+    </nav>
 
-  <footer>
-    <div class="container">
-      <p><a href="/">← Back to Home</a></p>
-      <p style="margin-top:12px;">&copy; 2026 Bertin Coaching</p>
-    </div>
-  </footer>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <div style="text-align:center;max-width:900px;margin:0 auto">
+          <div class="eyebrow reveal" style="justify-content:center">The Receipts</div>
+          <h1 class="reveal delay-1" style="text-align:center">RESULTS<br/>THAT <span class="accent">SPEAK.</span></h1>
+          <p class="lede reveal delay-2" style="margin-left:auto;margin-right:auto">Competition wins, lifestyle transformations, and proof that the system works.</p>
+        </div>
+      </div>
+    </section>
 
-  <script>
-    window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
-    const menuBtn=document.getElementById('menuBtn');
-    const mobileMenu=document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click',()=>{mobileMenu.classList.toggle('active')});
-    document.addEventListener('click',(e)=>{if(!mobileMenu.contains(e.target)&&!menuBtn.contains(e.target))mobileMenu.classList.remove('active')});
-  </script>
+    <!-- TICKER -->
+    <section class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Pro Cards.</span><span class="sep">✦</span>
+        <span class="muted">Stage Placings.</span><span class="sep">✦</span>
+        <span>Transformations.</span><span class="sep">✦</span>
+        <span class="muted">Built to Win.</span><span class="sep">✦</span>
+        <span>Pro Cards.</span><span class="sep">✦</span>
+        <span class="muted">Stage Placings.</span><span class="sep">✦</span>
+        <span>Transformations.</span><span class="sep">✦</span>
+        <span class="muted">Built to Win.</span><span class="sep">✦</span>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="section" style="padding:100px 0">
+      <div class="container">
+        <div class="results-grid">
+          <div class="result-stat reveal">
+            <div class="label">IFBB</div>
+            <div class="value"><span class="accent">8</span>+</div>
+            <span class="unit">Pro Cards Earned</span>
+          </div>
+          <div class="result-stat reveal delay-1">
+            <div class="label">On Stage</div>
+            <div class="value">100<span class="accent">+</span></div>
+            <span class="unit">Stage Placings</span>
+          </div>
+          <div class="result-stat reveal delay-2">
+            <div class="label">Lifestyle</div>
+            <div class="value">500<span class="accent">+</span></div>
+            <span class="unit">Transformations</span>
+          </div>
+          <div class="result-stat reveal delay-3">
+            <div class="label">Average</div>
+            <div class="value">12<span class="accent">wk</span></div>
+            <span class="unit">Recomposition</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY COMING SOON -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label"><span class="num">01</span> Gallery</div>
+          <h2>Stage &amp; <span class="accent">Lifestyle.</span></h2>
+          <p>A selection of client transformations. Full gallery with case studies and prep timelines launching soon.</p>
+        </div>
+        <div class="transformations reveal">
+          <div class="transformation" data-label="Pro Card Earned">
+            <span class="tag">IFBB Pro</span>
+            <div class="meta"><span>54 WEEK PREP</span><b>Pro Card</b></div>
+          </div>
+          <div class="transformation" data-label="Overall Win — Bikini">
+            <span class="tag">1st Place</span>
+            <div class="meta"><span>16 WEEK PREP</span><b>Overall</b></div>
+          </div>
+          <div class="transformation" data-label="Top 7 Toronto Pro">
+            <span class="tag">Pro Show</span>
+            <div class="meta"><span>IFBB PRO</span><b>Top 7</b></div>
+          </div>
+        </div>
+        <div class="transformations reveal delay-1" style="margin-top:16px">
+          <div class="transformation" data-label="Lifestyle Recomp — 12 Weeks">
+            <span class="tag">Lifestyle</span>
+            <div class="meta"><span>12 WEEKS</span><b>Sustained</b></div>
+          </div>
+          <div class="transformation" data-label="Lifestyle Recomp — 20 Weeks">
+            <span class="tag">Lifestyle</span>
+            <div class="meta"><span>20 WEEKS</span><b>−22 lbs</b></div>
+          </div>
+          <div class="transformation" data-label="Lifestyle Recomp — 6 Months">
+            <span class="tag">Lifestyle</span>
+            <div class="meta"><span>6 MONTHS</span><b>Strength+</b></div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:72px" class="reveal">
+          <div style="display:inline-flex;align-items:center;gap:14px;padding:20px 28px;border:1px solid var(--line);font-family:var(--display);font-size:1rem;letter-spacing:.22em;color:var(--white);border-radius:10px">
+            <span style="width:8px;height:8px;background:var(--orange);border-radius:50%;animation:pulse 2s infinite"></span>
+            FULL GALLERY — COMING SOON
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}</style>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="content container reveal">
+        <h2>Your result <span class="accent">starts</span><br/>with an application.</h2>
+        <p>We review every application personally and only accept clients who demonstrate the commitment the system requires.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+          <a href="https://bertincoaching.com/athletes-application-form" class="btn btn-primary btn-large">Apply Now <span class="btn-arrow">→</span></a>
+          <a href="../#coaches" class="btn btn-secondary btn-large">Meet the Coaches</a>
+        </div>
+        <p class="hero-micro">Applications reviewed within 24 hours.</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="foot-grid">
+          <div class="foot-brand">
+            <img src="../logo-white.jpg" alt="Bertin Coaching" />
+            <div class="name">Bertin / Coaching</div>
+            <p>Elite coaching for high-level Bikini &amp; Fit Model athletes. Built on science. Driven by discipline. Focused on results.</p>
+          </div>
+          <div class="foot-col">
+            <h5>Coaching</h5>
+            <a href="../competition/">Competition</a>
+            <a href="../lifestyle/">Lifestyle</a>
+            <a href="../#coaches">Coaches</a>
+            <a href="../results/">Results</a>
+          </div>
+          <div class="foot-col">
+            <h5>Company</h5>
+            <a href="../#coaches">About</a>
+            <a href="../#faq">FAQ</a>
+            <a href="../#apply">Apply</a>
+          </div>
+          <div class="foot-col">
+            <h5>Contact</h5>
+            <a href="https://bertincoaching.com/athletes-application-form">Athletes</a>
+            <a href="https://bertincoaching.com/lifestyle-booking">Lifestyle</a>
+            <a href="mailto:hello@bertincoaching.com">Email</a>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <p>© 2026 Bertin Coaching · Elite Physique Systems</p>
+          <div class="tag">Begin. Believe. <span class="accent">Become.</span></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../site.js"></script>
 </body>
 </html>

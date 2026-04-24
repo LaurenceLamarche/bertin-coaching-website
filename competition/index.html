@@ -3,277 +3,281 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Competition Coaching | Bertin Coaching - Built to Win</title>
+  <title>Competition Coaching | Bertin Coaching — Built to Win</title>
   <meta name="description" content="Elite competition prep coaching for athletes who want to win. Stage-ready results with direct oversight from Sebastien Bertin." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #050a14;
-      --bg-soft: #0a1420;
-      --panel: #0f1a2c;
-      --line: rgba(255,255,255,0.08);
-      --cream: #f6f1ea;
-      --text: #e8f0f8;
-      --muted: rgba(200,220,240,0.65);
-      --orange: #f25c2a;
-      --orange-light: #ff7a4d;
-      --orange-dark: #c94a1f;
-      --radius: 24px;
-      --headline: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      --body: 'Inter',system-ui,sans-serif;
-    }
-    *,*::before,*::after{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:var(--body);color:var(--text);background:radial-gradient(circle at 70% 0%,rgba(242,92,42,0.12),transparent 50%),radial-gradient(circle at 20% 10%,rgba(255,122,77,0.08),transparent 35%),linear-gradient(180deg,#020814 0%,#050d1a 40%,#0a1422 100%);overflow-x:hidden}
-    img{display:block;width:100%;height:auto}
-    a{color:inherit;text-decoration:none}
-    button{font:inherit;cursor:pointer}
-    .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
-    .nav{position:fixed;inset:0 0 auto 0;z-index:50;padding:18px 0;transition:background .25s,border-color .25s,box-shadow .25s}
-    .nav.scrolled{background:rgba(5,10,20,0.95);backdrop-filter:blur(18px);box-shadow:0 10px 40px rgba(0,0,0,0.24);border-bottom:1px solid rgba(255,255,255,0.06)}
-    .nav-inner{width:min(1180px,calc(100% - 40px));margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .logo{display:inline-flex;align-items:center;gap:14px;min-width:0}
-    .logo img{width:52px;height:52px;object-fit:contain;border-radius:14px;background:rgba(255,255,255,0.04);padding:6px;border:1px solid rgba(255,255,255,0.05)}
-    .brand-copy{display:flex;flex-direction:column;line-height:1.1;min-width:0}
-    .brand-copy strong{font-size:0.98rem;letter-spacing:0.02em}
-    .brand-copy span{font-size:0.78rem;color:var(--muted)}
-    .nav-links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0}
-    .nav-links a{color:rgba(200,220,240,0.8);font-size:0.92rem;font-weight:500;transition:color .2s}
-    .nav-links a:hover{color:var(--cream)}
-    .nav-cta{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:15px;background:linear-gradient(135deg,var(--orange-light),var(--orange));color:#050a10!important;font-weight:800!important;box-shadow:0 12px 30px rgba(242,92,42,0.35)}
-    .menu-btn{display:none;width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);color:var(--cream);flex-direction:column;justify-content:center;align-items:center;gap:4px;padding:0}
-    .menu-btn span{display:block;width:20px;height:2px;border-radius:2px;background:currentColor}
-    .mobile-menu{display:none;position:fixed;top:80px;left:20px;right:20px;background:rgba(5,10,20,0.98);border:1px solid var(--line);border-radius:15px;padding:20px;z-index:100}
-    .mobile-menu.active{display:block}
-    .mobile-menu a{display:block;padding:14px 0;color:var(--text);font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
-    .mobile-menu a:last-child{border-bottom:none}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 26px;border-radius:15px;border:1px solid transparent;font-weight:700;font-size:0.95rem;transition:transform .2s,box-shadow .2s,background .2s;text-align:center}
-    .btn:hover{transform:translateY(-2px)}
-    .btn-primary{background:linear-gradient(135deg,var(--orange-light),var(--orange));color:#050a10;box-shadow:0 14px 30px rgba(242,92,42,0.35)}
-    .btn-secondary{border-color:rgba(255,255,255,0.14);background:rgba(255,255,255,0.04);color:var(--cream)}
-    .btn-large{min-height:60px;padding:0 32px;font-size:1rem}
-    .hero{padding:160px 0 80px;text-align:center;position:relative;background-image:linear-gradient(rgba(5,10,20,0.88),rgba(5,10,20,0.92)),url('https://assets.cdn.filesafe.space/7BACHlimOjRa4xMD4hlh/media/6939dab5169a42da3a275396.jpeg');background-size:cover;background-position:center}
-    .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:15px;background:rgba(242,92,42,0.15);border:1px solid rgba(242,92,42,0.3);color:#ff9a72;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:24px}
-    .hero h1{margin:0 auto;font-family:var(--headline);font-size:clamp(3rem,7vw,6rem);line-height:0.95;letter-spacing:-0.03em;font-weight:700}
-    .hero h2{margin:8px auto 0;font-family:var(--headline);font-size:clamp(2rem,5vw,4rem);line-height:1;letter-spacing:-0.02em;font-weight:600;color:var(--orange)}
-    .hero-subheadline{margin:28px auto 0;max-width:620px;color:var(--muted);font-size:1.2rem;line-height:1.7}
-    .proof-bar{display:flex;justify-content:center;gap:40px;margin:40px 0;font-size:0.95rem;color:rgba(200,220,240,0.9)}
-    .proof-bar strong{color:#ff9a72;font-weight:700;display:block;font-size:1.6rem;margin-bottom:4px}
-    .hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:20px}
-    .hero-note{margin-top:16px;font-size:0.85rem;color:var(--muted)}
-    .hero-image{margin-top:50px;max-width:900px;margin-left:auto;margin-right:auto}
-    .section{padding:100px 0}
-    .section-alt{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0))}
-    .section-dark{background:linear-gradient(180deg,rgba(5,11,20,0) 0%,rgba(5,11,20,0.5) 100%)}
-    .section-head{text-align:center;margin-bottom:60px}
-    .section-head h2{margin:0 0 16px;font-family:var(--headline);font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-0.02em;font-weight:700}
-    .section-head p{margin:0 auto;max-width:620px;color:var(--muted);line-height:1.7;font-size:1.05rem}
-    .expectations{border:1px solid rgba(242,92,42,0.25);border-radius:var(--radius);padding:48px;max-width:900px;margin:0 auto;background:rgba(242,92,42,0.04)}
-    .expectations h3{font-family:var(--headline);font-size:1.6rem;margin:0 0 28px;color:var(--orange);text-align:center;font-weight:700}
-    .exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px 40px}
-    .exp-item{padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
-    .exp-item strong{display:block;color:#ff9a72;margin-bottom:6px;font-size:1rem}
-    .exp-item span{color:var(--muted);font-size:0.92rem}
-    .system-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-    .system-card{padding:32px 24px;border-radius:15px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);text-align:center}
-    .system-card .num{width:48px;height:48px;margin:0 auto 16px;border-radius:15px;background:linear-gradient(135deg,var(--orange-light),var(--orange));color:#050a10;font-weight:900;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
-    .system-card h3{margin:0 0 10px;font-size:1.05rem;font-weight:700}
-    .system-card p{margin:0;color:var(--muted);font-size:0.9rem;line-height:1.6}
-    .results-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center;margin-top:40px}
-    .result-item{padding:28px 20px;border-radius:15px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06)}
-    .result-item strong{display:block;font-size:2.2rem;color:var(--orange);margin-bottom:8px;font-family:var(--headline)}
-    .result-item span{color:var(--muted);font-size:0.9rem}
-    .image-placeholder{width:100%;aspect-ratio:16/9;border-radius:15px;background:linear-gradient(135deg,rgba(122,184,255,0.08),rgba(242,92,42,0.05));border:2px dashed rgba(122,184,255,0.25);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
-    .image-placeholder::before{content:'IMAGE PLACEHOLDER';font-size:0.85rem;letter-spacing:0.1em;color:rgba(122,184,255,0.5);font-weight:600}
-    .image-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:50px}
-    .final-cta{padding:100px 0;text-align:center;background:linear-gradient(180deg,rgba(242,92,42,0.1) 0%,transparent 100%);border-top:1px solid rgba(242,92,42,0.2)}
-    .final-cta h2{font-family:var(--headline);font-size:clamp(2rem,4vw,3rem);margin:0 0 20px;font-weight:700}
-    .final-cta p{max-width:520px;margin:0 auto 32px;color:var(--muted);font-size:1.1rem;line-height:1.7}
-    footer{padding:50px 0;text-align:center;border-top:1px solid rgba(255,255,255,0.06)}
-    footer p{margin:0;color:var(--muted);font-size:0.9rem}
-    @media(max-width:900px){.nav-links{display:none}.menu-btn{display:flex}.exp-grid{grid-template-columns:1fr}.system-grid{grid-template-columns:1fr 1fr}.results-grid{grid-template-columns:1fr 1fr}.image-gallery{grid-template-columns:1fr}.proof-bar{flex-direction:column;gap:20px}}
-    @media(max-width:600px){.system-grid{grid-template-columns:1fr}.results-grid{grid-template-columns:1fr}.expectations{padding:32px 24px}}
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="/" class="logo">
-        <img src="logo-white.jpg" alt="Bertin Coaching" style="width:62px;height:62px;object-fit:contain;background:transparent;padding:0;border:none;">
-      </a>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/competition">Competition</a></li>
-        <li><a href="/lifestyle">Lifestyle</a></li>
-        <li><a href="/results">Results</a></li>
-        <li><a href="#apply" class="nav-cta">Apply Now</a></li>
-      </ul>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="/">Home</a>
-      <a href="/competition">Competition</a>
-      <a href="/lifestyle">Lifestyle</a>
-      <a href="/results">Results</a>
-      <a href="#apply">Apply Now</a>
-    </div>
-  </nav>
+  <div class="bg-fx" id="bgFx" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
 
-  <section class="hero">
-    <div class="container">
-      <div class="hero-eyebrow">Competition Coaching</div>
-      <h1>Built</h1>
-      <h2>to Win</h2>
-      <p class="hero-subheadline">Elite competition prep for athletes who refuse to settle for participation. If you're serious about stepping on stage and competing at the highest level, this is your system.</p>
-      <div class="proof-bar">
-        <div><strong>8+</strong>Pro Cards Earned</div>
-        <div><strong>100+</strong>Stage Placings</div>
-        <div><strong>Multiple</strong>First Place Wins</div>
-        <div><strong>100%</strong>Commitment Required</div>
+  <div class="wrap">
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a href="../" class="logo" aria-label="Bertin Coaching home">
+          <img src="../logo-white.jpg" alt="Bertin Coaching" />
+          <span class="logo-text">Bertin <span style="color:var(--orange)">/</span> Coaching</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="../">Home</a></li>
+          <li><a href="../competition/" class="active">Competition</a></li>
+          <li><a href="../lifestyle/">Lifestyle</a></li>
+          <li><a href="../coaches/">Coaches</a></li>
+          <li><a href="../results/">Results</a></li>
+          <li><a href="#apply" class="nav-cta">Apply <span class="btn-arrow">→</span></a></li>
+        </ul>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
       </div>
-      <div class="hero-actions">
-        <a href="https://bertincoaching.com/athletes-application-form" class="btn btn-primary btn-large">Apply as an Athlete</a>
-        <a href="#system" class="btn btn-secondary btn-large">View the System</a>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="../">Home</a>
+        <a href="../competition/">Competition</a>
+        <a href="../lifestyle/">Lifestyle</a>
+        <a href="../coaches/">Coaches</a>
+        <a href="../results/">Results</a>
+        <a href="#apply">Apply Now</a>
       </div>
-      <p class="hero-note">Applications reviewed within 24 hours. Limited spots available.</p>
-      <div class="hero-image">
-        <div class="image-placeholder"></div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-head">
-        <h2>Who This Is For</h2>
-        <p>This is not for athletes who want to "try competing." This is for athletes who want to win.</p>
-      </div>
-      <div class="expectations">
-        <h3>Athlete Expectations</h3>
-        <div class="exp-grid">
-          <div class="exp-item">
-            <strong>Full Commitment</strong>
-            <span>No half-measures. You follow the protocol or you don't compete.</span>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container-wide">
+        <div class="split">
+          <div>
+            <div class="eyebrow reveal">Competition Coaching</div>
+            <h1 class="reveal delay-1"><span class="stroke">BUILT</span><br/>TO <span class="accent">WIN.</span></h1>
+            <p class="lede reveal delay-2">Elite competition prep for athletes who refuse to settle for participation. If you're serious about stepping on stage and competing at the highest level — this is your system.</p>
+            <div class="actions reveal delay-3">
+              <a href="https://bertincoaching.com/athletes-application-form" class="btn btn-primary btn-large">Apply as an Athlete <span class="btn-arrow">→</span></a>
+              <a href="#system" class="btn btn-secondary btn-large">View the System</a>
+            </div>
+            <p class="micro reveal delay-4">Applications reviewed within 24 hours · Limited roster</p>
           </div>
-          <div class="exp-item">
-            <strong>Daily Check-ins</strong>
-            <span>Weight, photos, and feedback every day during prep.</span>
-          </div>
-          <div class="exp-item">
-            <strong>Precision Execution</strong>
-            <span>Macros, training, cardio, supplements — followed exactly.</span>
-          </div>
-          <div class="exp-item">
-            <strong>Communication Standards</strong>
-            <span>Respond to directives within hours, not days.</span>
-          </div>
-          <div class="exp-item">
-            <strong>Peak Week Discipline</strong>
-            <span>No deviations. Trust the process we build together.</span>
-          </div>
-          <div class="exp-item">
-            <strong>Long-Term Vision</strong>
-            <span>One show is not the goal. Building a competitive physique is.</span>
+          <div class="hero-photo reveal delay-2" data-label="Stage Athlete — Peak Week">
+            <span class="tag">On Stage</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section section-dark" id="system">
-    <div class="container">
-      <div class="section-head">
-        <h2>The Competition System</h2>
-        <p>A complete framework designed to bring your best physique to the stage.</p>
+    <!-- TICKER -->
+    <section class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Pro Cards.</span><span class="sep">✦</span>
+        <span class="muted">Stage Placings.</span><span class="sep">✦</span>
+        <span>Peak Week Precision.</span><span class="sep">✦</span>
+        <span class="muted">Built to Win.</span><span class="sep">✦</span>
+        <span>Pro Cards.</span><span class="sep">✦</span>
+        <span class="muted">Stage Placings.</span><span class="sep">✦</span>
+        <span>Peak Week Precision.</span><span class="sep">✦</span>
+        <span class="muted">Built to Win.</span><span class="sep">✦</span>
       </div>
-      <div class="system-grid">
-        <div class="system-card">
-          <div class="num">1</div>
-          <h3>Assessment</h3>
-          <p>Full physique audit, metabolic baseline, and competition timeline planning.</p>
-        </div>
-        <div class="system-card">
-          <div class="num">2</div>
-          <h3>Structure</h3>
-          <p>Custom training, nutrition, and supplementation protocols built for your division.</p>
-        </div>
-        <div class="system-card">
-          <div class="num">3</div>
-          <h3>Refinement</h3>
-          <p>Weekly adjustments based on data, photos, and performance metrics.</p>
-        </div>
-        <div class="system-card">
-          <div class="num">4</div>
-          <h3>Peak &amp; Stage</h3>
-          <p>Peak week execution, posing refinement, and stage-day protocols.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>What You Receive</h2>
-        <p>Complete competition preparation with direct oversight from Sebastien Bertin.</p>
-      </div>
-      <div class="expectations" style="background:rgba(255,255,255,0.02);border-color:var(--line);">
-        <div class="exp-grid">
-          <div class="exp-item"><strong style="color:#7ab8ff;">Personalized Training Programs</strong><span>Periodized for contest prep and muscle retention.</span></div>
-          <div class="exp-item"><strong style="color:#7ab8ff;">Precision Nutrition Protocols</strong><span>Macro-managed with weekly adjustments.</span></div>
-          <div class="exp-item"><strong style="color:#7ab8ff;">Supplement Strategy</strong><span>Evidence-based protocols for performance and conditioning.</span></div>
-          <div class="exp-item"><strong style="color:#7ab8ff;">Posing &amp; Presentation</strong><span>Division-specific posing coaching and stage presence.</span></div>
-          <div class="exp-item"><strong style="color:#7ab8ff;">Peak Week Management</strong><span>Water, sodium, carb manipulation — executed perfectly.</span></div>
-          <div class="exp-item"><strong style="color:#7ab8ff;">24/7 Access</strong><span>Direct line for urgent questions during prep.</span></div>
+    <!-- PROOF BAR -->
+    <section class="section" style="padding:100px 0">
+      <div class="container">
+        <div class="results-grid">
+          <div class="result-stat reveal">
+            <div class="label">IFBB</div>
+            <div class="value"><span class="accent">8</span>+</div>
+            <span class="unit">Pro Cards Earned</span>
+          </div>
+          <div class="result-stat reveal delay-1">
+            <div class="label">On Stage</div>
+            <div class="value">100<span class="accent">+</span></div>
+            <span class="unit">Stage Placings</span>
+          </div>
+          <div class="result-stat reveal delay-2">
+            <div class="label">Overall</div>
+            <div class="value">Multi<span class="accent">.</span></div>
+            <span class="unit">1st Place Wins</span>
+          </div>
+          <div class="result-stat reveal delay-3">
+            <div class="label">Standard</div>
+            <div class="value">100<span class="accent">%</span></div>
+            <span class="unit">Commitment Required</span>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-head">
-        <h2>Track Record</h2>
-        <p>Results from athletes who committed to the system.</p>
+    <!-- WHO THIS IS FOR / CALLOUT -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label"><span class="num">01</span> The Filter</div>
+          <h2>Who this is <span class="accent">for.</span></h2>
+          <p>This is not for athletes who want to "try competing." This is for athletes who want to win.</p>
+        </div>
+        <div class="callout reveal">
+          <h3>Athlete <span class="accent">Expectations.</span></h3>
+          <p>If you step into this program, you agree to the following standard. No half-measures, no negotiations.</p>
+          <div class="exp-list" style="list-style:none;padding:0;margin:24px 0 0">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:0 40px">
+              <div class="exp-list" style="margin:0">
+                <li style="display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--line-soft)"><span class="idx" style="font-family:var(--display);color:var(--orange);min-width:28px">01</span><span><strong style="color:var(--white);display:block;margin-bottom:4px">Full Commitment</strong><span style="color:var(--muted);font-size:.9rem;line-height:1.6">No half-measures. You follow the protocol or you don't compete.</span></span></li>
+                <li style="display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--line-soft)"><span class="idx" style="font-family:var(--display);color:var(--orange);min-width:28px">02</span><span><strong style="color:var(--white);display:block;margin-bottom:4px">Daily Check-ins</strong><span style="color:var(--muted);font-size:.9rem;line-height:1.6">Weight, photos, and feedback every day during prep.</span></span></li>
+                <li style="display:flex;gap:18px;padding:16px 0"><span class="idx" style="font-family:var(--display);color:var(--orange);min-width:28px">03</span><span><strong style="color:var(--white);display:block;margin-bottom:4px">Precision Execution</strong><span style="color:var(--muted);font-size:.9rem;line-height:1.6">Macros, training, cardio — followed exactly.</span></span></li>
+              </div>
+              <div class="exp-list" style="margin:0">
+                <li style="display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--line-soft)"><span class="idx" style="font-family:var(--display);color:var(--orange);min-width:28px">04</span><span><strong style="color:var(--white);display:block;margin-bottom:4px">Communication Standards</strong><span style="color:var(--muted);font-size:.9rem;line-height:1.6">Respond to directives within hours, not days.</span></span></li>
+                <li style="display:flex;gap:18px;padding:16px 0;border-bottom:1px solid var(--line-soft)"><span class="idx" style="font-family:var(--display);color:var(--orange);min-width:28px">05</span><span><strong style="color:var(--white);display:block;margin-bottom:4px">Peak Week Discipline</strong><span style="color:var(--muted);font-size:.9rem;line-height:1.6">No deviations. Trust the process we build together.</span></span></li>
+                <li style="display:flex;gap:18px;padding:16px 0"><span class="idx" style="font-family:var(--display);color:var(--orange);min-width:28px">06</span><span><strong style="color:var(--white);display:block;margin-bottom:4px">Long-Term Vision</strong><span style="color:var(--muted);font-size:.9rem;line-height:1.6">One show is not the goal. Building a competitive physique is.</span></span></li>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="results-grid">
-        <div class="result-item"><strong>8+</strong><span>Pro Cards Earned</span></div>
-        <div class="result-item"><strong>100+</strong><span>Stage Placings</span></div>
-        <div class="result-item"><strong>Multiple</strong><span>Overall Wins</span></div>
-        <div class="result-item"><strong>100%</strong><span>Dedication Required</span></div>
+    </section>
+
+    <!-- THE SYSTEM -->
+    <section class="section" id="system" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label"><span class="num">02</span> The System</div>
+          <h2>The Competition<br/><span class="accent">Framework.</span></h2>
+          <p>Four phases. One standard. A complete framework designed to bring your best physique to the stage — on the date that matters.</p>
+        </div>
+        <div class="method-grid">
+          <div class="method-card reveal">
+            <span class="marker">Phase</span>
+            <div class="number">01</div>
+            <h3>Assessment</h3>
+            <p>Full physique audit, metabolic baseline, and competition timeline planning. Working backward from your target date.</p>
+          </div>
+          <div class="method-card reveal delay-1">
+            <span class="marker">Phase</span>
+            <div class="number">02</div>
+            <h3>Structure</h3>
+            <p>Custom training, nutrition, and supplementation protocols built for your division, your timeline, and your biology.</p>
+          </div>
+          <div class="method-card reveal delay-2">
+            <span class="marker">Phase</span>
+            <div class="number">03</div>
+            <h3>Refinement</h3>
+            <p>Weekly adjustments based on data, photos, and performance. No guesswork — only response to real signals.</p>
+          </div>
+          <div class="method-card reveal delay-3">
+            <span class="marker">Phase</span>
+            <div class="number">04</div>
+            <h3>Peak &amp; Stage</h3>
+            <p>Peak week execution, posing refinement, and stage-day protocols. The final 7 days, engineered.</p>
+          </div>
+        </div>
+        <p class="method-tagline reveal">"On show day, <span class="accent">nothing</span> is left to chance."</p>
       </div>
-      <div class="image-gallery">
-        <div class="image-placeholder" style="aspect-ratio:3/4;"></div>
-        <div class="image-placeholder" style="aspect-ratio:3/4;"></div>
-        <div class="image-placeholder" style="aspect-ratio:3/4;"></div>
+    </section>
+
+    <!-- WHAT YOU RECEIVE -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label"><span class="num">03</span> What You Receive</div>
+          <h2>Complete <span class="accent">oversight.</span></h2>
+          <p>Direct coaching from Seb Bertin and the Bertin Coaching team. Every variable managed. Nothing left to chance.</p>
+        </div>
+        <div class="exp-two-col">
+          <div class="exp-card receive reveal">
+            <h4>DELIVERABLES</h4>
+            <ul class="exp-list">
+              <li><span class="idx">01</span><span><strong>Personalized Training Programs</strong><span>Periodized for contest prep and muscle retention.</span></span></li>
+              <li><span class="idx">02</span><span><strong>Precision Nutrition Protocols</strong><span>Macro-managed with weekly adjustments.</span></span></li>
+              <li><span class="idx">03</span><span><strong>Supplement Strategy</strong><span>Evidence-based protocols for performance and conditioning.</span></span></li>
+            </ul>
+          </div>
+          <div class="exp-card receive reveal delay-1">
+            <h4>STAGE-READY</h4>
+            <ul class="exp-list">
+              <li><span class="idx">04</span><span><strong>Posing &amp; Presentation</strong><span>Division-specific posing coaching and stage presence.</span></span></li>
+              <li><span class="idx">05</span><span><strong>Peak Week Management</strong><span>Water, sodium, carb manipulation — executed perfectly.</span></span></li>
+              <li><span class="idx">06</span><span><strong>Direct Access to Seb</strong><span>Direct line for urgent questions during prep.</span></span></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="final-cta" id="apply">
-    <div class="container">
-      <h2>Ready to Compete at Your Best?</h2>
-      <p>Apply below. We review every application personally and only accept athletes who demonstrate the commitment required to win.</p>
-      <a href="https://bertincoaching.com/athletes-application-form" class="btn btn-primary btn-large">Apply as an Athlete</a>
-      <p class="hero-note" style="margin-top:20px;">Limited spots available. Applications reviewed within 24 hours.</p>
-    </div>
-  </section>
+    <!-- TRACK RECORD -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label"><span class="num">04</span> The Receipts</div>
+          <h2>Track <span class="accent">record.</span></h2>
+          <p>Results from athletes who committed to the system.</p>
+        </div>
+        <div class="transformations reveal">
+          <div class="transformation" data-label="Pro Card — 54 Week Prep">
+            <span class="tag">IFBB Pro</span>
+            <div class="meta"><span>54 WEEKS</span><b>Pro Card</b></div>
+          </div>
+          <div class="transformation" data-label="Overall Win — Bikini">
+            <span class="tag">Overall</span>
+            <div class="meta"><span>16 WEEK PREP</span><b>1st Place</b></div>
+          </div>
+          <div class="transformation" data-label="Top 7 Toronto Pro 2026">
+            <span class="tag">Pro Show</span>
+            <div class="meta"><span>IFBB PRO BIKINI</span><b>Top 7</b></div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:56px" class="reveal">
+          <a href="../results/" class="btn btn-secondary">View Full Results Gallery <span class="btn-arrow">→</span></a>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <div class="container">
-      <p><a href="/">← Back to Home</a></p>
-      <p style="margin-top:12px;">&copy; 2026 Bertin Coaching. Elite Physique Systems.</p>
-    </div>
-  </footer>
+    <!-- FINAL CTA -->
+    <section class="final-cta" id="apply">
+      <div class="content container reveal">
+        <h2>Ready to compete<br/>at your <span class="accent">best?</span></h2>
+        <p>Apply below. We review every application personally and only accept athletes who demonstrate the commitment required to win.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+          <a href="https://bertincoaching.com/athletes-application-form" class="btn btn-primary btn-large">Apply as an Athlete <span class="btn-arrow">→</span></a>
+          <a href="../#coaches" class="btn btn-secondary btn-large">Meet the Coaches</a>
+        </div>
+        <p class="hero-micro">Limited spots available · Applications reviewed within 24 hours.</p>
+      </div>
+    </section>
 
-  <script>
-    window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
-    const menuBtn=document.getElementById('menuBtn');
-    const mobileMenu=document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click',()=>{mobileMenu.classList.toggle('active')});
-    document.addEventListener('click',(e)=>{if(!mobileMenu.contains(e.target)&&!menuBtn.contains(e.target))mobileMenu.classList.remove('active')});
-  </script>
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="foot-grid">
+          <div class="foot-brand">
+            <img src="../logo-white.jpg" alt="Bertin Coaching" />
+            <div class="name">Bertin / Coaching</div>
+            <p>Elite coaching for high-level Bikini &amp; Fit Model athletes. Built on science. Driven by discipline. Focused on results.</p>
+          </div>
+          <div class="foot-col">
+            <h5>Coaching</h5>
+            <a href="../competition/">Competition</a>
+            <a href="../lifestyle/">Lifestyle</a>
+            <a href="../#coaches">Coaches</a>
+            <a href="../results/">Results</a>
+          </div>
+          <div class="foot-col">
+            <h5>Company</h5>
+            <a href="../#coaches">About</a>
+            <a href="../#faq">FAQ</a>
+            <a href="#apply">Apply</a>
+          </div>
+          <div class="foot-col">
+            <h5>Contact</h5>
+            <a href="https://bertincoaching.com/athletes-application-form">Athletes</a>
+            <a href="https://bertincoaching.com/lifestyle-booking">Lifestyle</a>
+            <a href="mailto:hello@bertincoaching.com">Email</a>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <p>© 2026 Bertin Coaching · Elite Physique Systems</p>
+          <div class="tag">Begin. Believe. <span class="accent">Become.</span></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../site.js"></script>
 </body>
 </html>
