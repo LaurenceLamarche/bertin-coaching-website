@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coaches | Bertin Coaching — The Team</title>
+  <meta name="description" content="Meet the Bertin Coaching team. IFBB Pros, naturopaths, and elite coaches with lived experience and relentless standards." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .coach-hero{padding:180px 0 80px;position:relative;border-bottom:1px solid var(--line)}
+    .coach-hero .eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--orange);font-weight:600;margin-bottom:28px}
+    .coach-hero .eyebrow::before{content:"";width:32px;height:1px;background:var(--orange)}
+    .coach-hero h1{font-family:var(--display);font-size:clamp(4rem,12vw,12rem);line-height:.86;letter-spacing:.008em;color:var(--white);margin:0;font-weight:400}
+    .coach-hero h1 .accent{color:var(--orange)}
+    .coach-hero h1 .stroke{-webkit-text-stroke:1.5px var(--white);color:transparent}
+    .coach-hero p{margin:36px 0 0;max-width:620px;color:var(--muted);font-size:1.1rem;line-height:1.7}
+
+    .coach-block{padding:120px 0;border-bottom:1px solid var(--line);position:relative}
+    .coach-block:nth-child(even){background:#060606}
+    .coach-layout{display:grid;grid-template-columns:1.1fr 1.3fr;gap:80px;align-items:start}
+    .coach-block.flip .coach-layout{grid-template-columns:1.3fr 1.1fr}
+    .coach-block.flip .coach-media{order:2}
+    .coach-block.flip .coach-info{order:1}
+
+    .coach-media{position:relative}
+    .coach-media .main{aspect-ratio:3/4;background:#161616;position:relative;overflow:hidden;border-radius:10px;box-shadow:0 0 0 1px var(--line), 0 30px 60px -20px var(--blue-glow-strong), 0 0 80px -10px var(--blue-glow)}
+    .coach-media .main::before{content:attr(data-label);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.25);font-family:var(--display);font-size:1.3rem;letter-spacing:.2em;text-align:center;padding:24px}
+    .coach-media .main .tag{position:absolute;top:20px;left:20px;padding:8px 14px;background:var(--orange);color:#000;font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;z-index:2}
+    .coach-media .strip{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+    .coach-media .strip .slot{aspect-ratio:4/5;background:#141414;position:relative;overflow:hidden;border:1px solid var(--line);border-radius:10px}
+    .coach-media .strip .slot::before{content:attr(data-label);position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.2);font-family:var(--display);font-size:.85rem;letter-spacing:.18em;text-align:center;padding:14px}
+
+    .coach-info .role{font-family:var(--display);font-size:.9rem;letter-spacing:.28em;color:var(--orange);margin-bottom:8px;text-transform:uppercase}
+    .coach-info h2{font-family:var(--display);font-size:clamp(3rem,7vw,6rem);line-height:.9;letter-spacing:.01em;color:var(--white);margin:0;font-weight:400}
+    .coach-info h2 .accent{color:var(--orange)}
+    .coach-info .title{margin-top:16px;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+    .creds-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:36px;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+    .cred{padding:18px 20px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .cred .k{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--warm);margin-bottom:6px;font-weight:600}
+    .cred .v{font-family:var(--display);font-size:1.1rem;letter-spacing:.04em;color:var(--white);line-height:1.1}
+    .cred .v .accent{color:var(--orange)}
+
+    .coach-bio{margin-top:36px;padding-top:28px;border-top:1px solid var(--line)}
+    .coach-bio p{margin:0 0 18px;color:rgba(245,241,234,.82);font-size:1rem;line-height:1.8}
+    .coach-bio p:last-child{margin-bottom:0}
+
+    .coach-quote{margin-top:32px;padding:20px 0 20px 24px;border-left:2px solid var(--orange);font-family:var(--display);font-size:1.3rem;letter-spacing:.03em;color:var(--white);line-height:1.2}
+    .coach-quote .accent{color:var(--orange)}
+
+    .coach-cta{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap}
+
+    .coach-idx{position:absolute;top:60px;right:48px;font-family:var(--display);font-size:8rem;line-height:1;color:rgba(255,106,0,.08);letter-spacing:.01em;pointer-events:none;z-index:0}
+
+    @media(max-width:1024px){
+      .coach-layout,.coach-block.flip .coach-layout{grid-template-columns:1fr;gap:48px}
+      .coach-block.flip .coach-media{order:0}
+      .coach-block.flip .coach-info{order:0}
+      .coach-idx{font-size:5rem;top:30px;right:24px}
+    }
+    @media(max-width:720px){
+      .coach-block{padding:80px 0}
+      .creds-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-fx" id="bgFx" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a href="../" class="logo" aria-label="Bertin Coaching home">
+          <img src="../logo-white.jpg" alt="Bertin Coaching" />
+          <span class="logo-text">Bertin <span style="color:var(--orange)">/</span> Coaching</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="../">Home</a></li>
+          <li><a href="../competition/">Competition</a></li>
+          <li><a href="../lifestyle/">Lifestyle</a></li>
+          <li><a href="../coaches/" class="active">Coaches</a></li>
+          <li><a href="../results/">Results</a></li>
+          <li><a href="../#apply" class="nav-cta">Apply <span class="btn-arrow">→</span></a></li>
+        </ul>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="../">Home</a>
+        <a href="../competition/">Competition</a>
+        <a href="../lifestyle/">Lifestyle</a>
+        <a href="../coaches/">Coaches</a>
+        <a href="../results/">Results</a>
+        <a href="../#apply">Apply Now</a>
+      </div>
+    </nav>
+
+    <!-- PAGE HERO -->
+    <section class="coach-hero">
+      <div class="container">
+        <div class="eyebrow reveal">The Team</div>
+        <h1 class="reveal delay-1">COACHED BY<br/><span class="accent">CHAMPIONS.</span></h1>
+        <p class="reveal delay-2">Four coaches. One standard. Each bringing lived experience, credentials, and a relentless commitment to your results. Every athlete on our roster is coached by someone who has walked the road themselves.</p>
+      </div>
+    </section>
+
+    <!-- TICKER -->
+    <section class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>IFBB Pro.</span><span class="sep">✦</span>
+        <span class="muted">Naturopath.</span><span class="sep">✦</span>
+        <span>Engineer.</span><span class="sep">✦</span>
+        <span class="muted">Mentor.</span><span class="sep">✦</span>
+        <span>IFBB Pro.</span><span class="sep">✦</span>
+        <span class="muted">Naturopath.</span><span class="sep">✦</span>
+        <span>Engineer.</span><span class="sep">✦</span>
+        <span class="muted">Mentor.</span><span class="sep">✦</span>
+      </div>
+    </section>
+
+    <!-- SEB -->
+    <section class="coach-block" id="seb">
+      <div class="coach-idx">01</div>
+      <div class="container">
+        <div class="coach-layout">
+          <div class="coach-media reveal">
+            <div class="main" data-label="SEB BERTIN — IFBB PRO">
+              <span class="tag">Founder</span>
+            </div>
+            <div class="strip">
+              <div class="slot" data-label="Stage Shot"></div>
+              <div class="slot" data-label="Coaching Floor"></div>
+            </div>
+          </div>
+          <div class="coach-info reveal delay-1">
+            <div class="role">Founder / Head Coach</div>
+            <h2>Seb <span class="accent">Bertin.</span></h2>
+            <div class="title">IFBB Pro · 10+ yrs coaching</div>
+
+            <div class="creds-grid">
+              <div class="cred"><div class="k">Status</div><div class="v"><span class="accent">IFBB</span> Pro</div></div>
+              <div class="cred"><div class="k">Experience</div><div class="v">12<span class="accent">+</span> yrs competing</div></div>
+              <div class="cred"><div class="k">Shows</div><div class="v">16<span class="accent">+</span> stages</div></div>
+              <div class="cred"><div class="k">Pro Prep</div><div class="v">54<span class="accent">wk</span></div></div>
+              <div class="cred"><div class="k">Background</div><div class="v">PMP / Engineer</div></div>
+              <div class="cred"><div class="k">Roster</div><div class="v">Limited by design</div></div>
+            </div>
+
+            <div class="coach-bio">
+              <p>Seb is an IFBB Pro himself. He strives to coach his athletes the way he always would have liked to be coached. Along with his background in engineering as a construction project manager, he has over 10 years of coaching experience building champions from the ground up.</p>
+              <p>His bodybuilding career spans over 12 years and 16+ shows, including a 54-week prep to earn his pro card, which humbled him, made him a better human and a better coach.</p>
+              <p>If you've ever been told to "push through" by someone who doesn't understand what emotional or physical struggles you're going through in the depths of prep, you can be sure that this won't be the case with Seb. You'll always get a fair, honest and empathetic coach who will do everything in his power to see you win.</p>
+              <p>Seb has never been genetically gifted, but through meticulous planning, strategy and hard work, he has been able to achieve his dreams of being a Pro athlete — and now prides himself on teaching others how to do the same. Whether you're just starting out or already pushing to reach the next level, he is no stranger to facing a challenge head on and bringing the best out of his athletes.</p>
+            </div>
+
+            <div class="coach-quote">"All you have to do is put in the work, follow the plan, and <span class="accent">trust</span> that you're in the right hands."</div>
+
+            <div class="coach-cta">
+              <a href="https://bertincoaching.com/athletes-application-form" class="btn btn-primary">Apply with Seb <span class="btn-arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANAIS -->
+    <section class="coach-block flip" id="anais">
+      <div class="coach-idx">02</div>
+      <div class="container">
+        <div class="coach-layout">
+          <div class="coach-info reveal">
+            <div class="role">Lifestyle Coach / IFBB Pro</div>
+            <h2>Anaïs <span class="accent">Biron.</span></h2>
+            <div class="title">IFBB Pro Bikini · Top 7 Toronto Pro 2026</div>
+
+            <div class="creds-grid">
+              <div class="cred"><div class="k">Status</div><div class="v"><span class="accent">IFBB</span> Pro Bikini</div></div>
+              <div class="cred"><div class="k">Experience</div><div class="v">5<span class="accent">+</span> yrs competing</div></div>
+              <div class="cred"><div class="k">Pro Level</div><div class="v">2 yrs pro</div></div>
+              <div class="cred"><div class="k">Best Placing</div><div class="v">Top <span class="accent">7</span> Toronto Pro</div></div>
+              <div class="cred"><div class="k">Focus</div><div class="v">Lifestyle</div></div>
+              <div class="cred"><div class="k">Mentor</div><div class="v">Seb Bertin</div></div>
+            </div>
+
+            <div class="coach-bio">
+              <p>Anaïs is an IFBB Pro Bikini athlete, one of the youngest professionals in the world, and a lifestyle coach on the Bertin Coaching team. After 5 years of competitive bodybuilding and 2 years competing at the professional level — including a Top 7 finish at the 2026 Toronto Pro — she knows firsthand what it truly takes to transform your body and your life.</p>
+              <p>What sets her apart is simple: she's lived it. The discipline, the setbacks, the breakthroughs — she's been through all of it. Mentored by Seb Bertin, one of the most talented and knowledgeable coaches in the industry, Anaïs is always growing, always learning, and always bringing that knowledge directly to her clients.</p>
+              <p>Her coaching style is direct, organized, and grounded in reality. No fluff, no empty promises — just a clear plan, real accountability, and someone genuinely invested in seeing you succeed. She has a gift for making the hard work feel worthwhile, keeping things fun while still pushing you further than you thought you could go.</p>
+              <p>Working with Anaïs means working with someone who is authentic, passionate, and fully committed to your results. Not because it's her job — because she genuinely cares.</p>
+            </div>
+
+            <div class="coach-quote">"Better habits, a stronger body, and a higher quality of life <span class="accent">shouldn't</span> have to be miserable."</div>
+
+            <div class="coach-cta">
+              <a href="https://bertincoaching.com/lifestyle-booking" class="btn btn-primary">Apply with Anaïs <span class="btn-arrow">→</span></a>
+            </div>
+          </div>
+          <div class="coach-media reveal delay-1">
+            <div class="main" data-label="ANAÏS BIRON — IFBB PRO">
+              <span class="tag">Pro Bikini</span>
+            </div>
+            <div class="strip">
+              <div class="slot" data-label="Stage / Toronto Pro"></div>
+              <div class="slot" data-label="Training Shot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOLA -->
+    <section class="coach-block" id="lola">
+      <div class="coach-idx">03</div>
+      <div class="container">
+        <div class="coach-layout">
+          <div class="coach-media reveal">
+            <div class="main" data-label="LOLA LAMARCHE — SYSTEMS">
+              <span class="tag">Systems</span>
+            </div>
+            <div class="strip">
+              <div class="slot" data-label="Cayman Clinic"></div>
+              <div class="slot" data-label="Editorial Shot"></div>
+            </div>
+          </div>
+          <div class="coach-info reveal delay-1">
+            <div class="role">Systems &amp; Longevity</div>
+            <h2>Lola <span class="accent">Lamarche.</span></h2>
+            <div class="title">Naturopath · Engineer · Founder</div>
+
+            <div class="creds-grid">
+              <div class="cred"><div class="k">Discipline</div><div class="v">Naturopathy</div></div>
+              <div class="cred"><div class="k">Background</div><div class="v">Software Eng.</div></div>
+              <div class="cred"><div class="k">Founder</div><div class="v">Longevity <span class="accent">Clinic</span></div></div>
+              <div class="cred"><div class="k">Location</div><div class="v">Cayman Islands</div></div>
+              <div class="cred"><div class="k">Focus</div><div class="v">Precision Health</div></div>
+              <div class="cred"><div class="k">For</div><div class="v">Women</div></div>
+            </div>
+
+            <div class="coach-bio">
+              <p>Lola is an entrepreneur, coach, naturopath, software engineer, and founder of projects in longevity, health, and systems. She built a longevity clinic in the Cayman Islands, which gave her a rare understanding of precision health, high-touch care, and what it actually takes to help people get better — sustainably.</p>
+              <p>With one foot in biology, one in technology, and a deep obsession with intelligent optimization, Lola stands out for her ability to see what others miss. She understands human beings, but also the systems that support real transformation.</p>
+              <p>Her approach is structured, direct, and grounded in reality. She likes simple solutions, high standards, and people who truly want to move forward. Whether it's health, coaching, or business, she believes women deserve tools that strengthen them, not systems that burn them out.</p>
+              <p>Lola builds businesses and experiences that combine performance, clarity, and femininity — with one simple vision: helping women live better, think better, and perform better.</p>
+            </div>
+
+            <div class="coach-quote">"Women deserve tools that <span class="accent">strengthen</span> them, not systems that burn them out."</div>
+
+            <div class="coach-cta">
+              <a href="https://bertincoaching.com/lifestyle-booking" class="btn btn-primary">Apply with Lola <span class="btn-arrow">→</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHARLIE -->
+    <section class="coach-block flip" id="sharlie">
+      <div class="coach-idx">04</div>
+      <div class="container">
+        <div class="coach-layout">
+          <div class="coach-info reveal">
+            <div class="role">Coach</div>
+            <h2>Sharlie <span class="accent">Caron.</span></h2>
+            <div class="title">Bertin Coaching Team</div>
+
+            <div class="creds-grid">
+              <div class="cred"><div class="k">Team</div><div class="v"><span class="accent">Bertin</span> Coaching</div></div>
+              <div class="cred"><div class="k">Role</div><div class="v">Athlete Mentor</div></div>
+              <div class="cred"><div class="k">Style</div><div class="v">Structured</div></div>
+              <div class="cred"><div class="k">Bio</div><div class="v"><span class="accent">Coming</span> soon</div></div>
+            </div>
+
+            <div class="coach-bio">
+              <p>Sharlie brings the same rigor and empathy that defines the Bertin standard — structured plans, real accountability, and coaching that meets clients where they are.</p>
+              <p style="color:var(--muted);font-style:italic">Full bio coming soon.</p>
+            </div>
+
+            <div class="coach-cta">
+              <a href="https://bertincoaching.com/lifestyle-booking" class="btn btn-primary">Apply with Sharlie <span class="btn-arrow">→</span></a>
+            </div>
+          </div>
+          <div class="coach-media reveal delay-1">
+            <div class="main" data-label="SHARLIE CARON — COACH">
+              <span class="tag">Coach</span>
+            </div>
+            <div class="strip">
+              <div class="slot" data-label="Portrait"></div>
+              <div class="slot" data-label="Lifestyle"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="content container reveal">
+        <h2>One team.<br/>One <span class="accent">standard.</span></h2>
+        <p>Every Bertin Coaching client works with a coach who has lived the journey. Apply below to be matched with the right one.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+          <a href="https://bertincoaching.com/athletes-application-form" class="btn btn-primary btn-large">Apply Now <span class="btn-arrow">→</span></a>
+          <a href="../#faq" class="btn btn-secondary btn-large">Read the FAQ</a>
+        </div>
+        <p class="hero-micro">Applications reviewed within 24 hours.</p>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="foot-grid">
+          <div class="foot-brand">
+            <img src="../logo-white.jpg" alt="Bertin Coaching" />
+            <div class="name">Bertin / Coaching</div>
+            <p>Elite coaching for high-level Bikini &amp; Fit Model athletes. Built on science. Driven by discipline. Focused on results.</p>
+          </div>
+          <div class="foot-col">
+            <h5>Coaching</h5>
+            <a href="../competition/">Competition</a>
+            <a href="../lifestyle/">Lifestyle</a>
+            <a href="../coaches/">Coaches</a>
+            <a href="../results/">Results</a>
+          </div>
+          <div class="foot-col">
+            <h5>Team</h5>
+            <a href="#seb">Seb Bertin</a>
+            <a href="#anais">Anaïs Biron</a>
+            <a href="#lola">Lola Lamarche</a>
+            <a href="#sharlie">Sharlie Caron</a>
+          </div>
+          <div class="foot-col">
+            <h5>Contact</h5>
+            <a href="https://bertincoaching.com/athletes-application-form">Athletes</a>
+            <a href="https://bertincoaching.com/lifestyle-booking">Lifestyle</a>
+            <a href="mailto:hello@bertincoaching.com">Email</a>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <p>© 2026 Bertin Coaching · Elite Physique Systems</p>
+          <div class="tag">Begin. Believe. <span class="accent">Become.</span></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../site.js"></script>
+</body>
+</html>

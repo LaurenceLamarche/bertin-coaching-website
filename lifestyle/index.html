@@ -3,491 +3,309 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lifestyle Coaching | Bertin Coaching - Rebuild With Structure</title>
+  <title>Lifestyle Coaching | Bertin Coaching — Rebuild With Structure</title>
   <meta name="description" content="Premium lifestyle coaching for driven individuals who want to lose fat, regain control, and build a physique that lasts. Structured, data-driven coaching." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #050a14;
-      --bg-soft: #0a1420;
-      --panel: #0f1a2c;
-      --line: rgba(255,255,255,0.08);
-      --cream: #f6f1ea;
-      --text: #e8f0f8;
-      --muted: rgba(200,220,240,0.65);
-      --orange: #f25c2a;
-      --orange-light: #ff7a4d;
-      --orange-dark: #c94a1f;
-      --radius: 24px;
-      --radius-sm: 15px;
-      --headline: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      --body: 'Inter',system-ui,sans-serif;
-    }
-    *,*::before,*::after{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;font-family:var(--body);color:var(--text);background:radial-gradient(circle at 70% 0%,rgba(242,92,42,0.12),transparent 50%),radial-gradient(circle at 20% 10%,rgba(255,122,77,0.08),transparent 35%),linear-gradient(180deg,#020814 0%,#050d1a 40%,#0a1422 100%);overflow-x:hidden}
-    img{display:block;width:100%;height:auto}
-    a{color:inherit;text-decoration:none}
-    button{font:inherit;cursor:pointer}
-    .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
-
-    /* NAV */
-    .nav{position:fixed;inset:0 0 auto 0;z-index:50;padding:18px 0;transition:background .25s,border-color .25s,box-shadow .25s}
-    .nav.scrolled{background:rgba(5,10,20,0.95);backdrop-filter:blur(18px);box-shadow:0 10px 40px rgba(0,0,0,0.24);border-bottom:1px solid rgba(255,255,255,0.06)}
-    .nav-inner{width:min(1180px,calc(100% - 40px));margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:18px}
-    .logo{display:inline-flex;align-items:center;gap:14px;min-width:0}
-    .logo img{width:52px;height:52px;object-fit:contain;border-radius:14px;background:rgba(255,255,255,0.04);padding:6px;border:1px solid rgba(255,255,255,0.05)}
-    .brand-copy{display:flex;flex-direction:column;line-height:1.1;min-width:0}
-    .brand-copy strong{font-size:0.98rem;letter-spacing:0.02em}
-    .brand-copy span{font-size:0.78rem;color:var(--muted)}
-    .nav-links{display:flex;align-items:center;gap:28px;list-style:none;margin:0;padding:0}
-    .nav-links a{color:rgba(200,220,240,0.8);font-size:0.92rem;font-weight:500;transition:color .2s}
-    .nav-links a:hover{color:var(--cream)}
-    .nav-cta{display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;border-radius:15px;background:linear-gradient(135deg,var(--orange-light),var(--orange));color:#050a10!important;font-weight:800!important;box-shadow:0 12px 30px rgba(242,92,42,0.35)}
-    .menu-btn{display:none;width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,0.08);background:rgba(255,255,255,0.03);color:var(--cream);flex-direction:column;justify-content:center;align-items:center;gap:4px;padding:0}
-    .menu-btn span{display:block;width:20px;height:2px;border-radius:2px;background:currentColor}
-    .mobile-menu{display:none;position:fixed;top:80px;left:20px;right:20px;background:rgba(7,16,24,0.98);border:1px solid var(--line);border-radius:15px;padding:20px;z-index:100}
-    .mobile-menu.active{display:block}
-    .mobile-menu a{display:block;padding:14px 0;color:var(--text);font-size:1rem;border-bottom:1px solid rgba(255,255,255,0.06)}
-    .mobile-menu a:last-child{border-bottom:none}
-
-    /* BUTTONS - max 15px radius */
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:0 28px;border-radius:15px;border:1px solid transparent;font-weight:700;font-size:0.95rem;transition:transform .2s,box-shadow .2s,background .2s;text-align:center}
-    .btn:hover{transform:translateY(-2px)}
-    .btn-primary{background:linear-gradient(135deg,var(--orange-light),var(--orange));color:#050a10;box-shadow:0 14px 30px rgba(242,92,42,0.35)}
-    .btn-secondary{border-color:rgba(255,255,255,0.14);background:rgba(255,255,255,0.04);color:var(--cream)}
-    .btn-large{min-height:60px;padding:0 32px;font-size:1rem}
-
-    /* HERO */
-    .hero{padding:160px 0 100px;text-align:center;position:relative;background:radial-gradient(ellipse at 50% 0%,rgba(242,92,42,0.1) 0%,transparent 60%)}
-    .hero-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border-radius:15px;background:rgba(242,92,42,0.12);border:1px solid rgba(242,92,42,0.25);color:#ff9a72;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:24px}
-    .hero h1{margin:0 auto;font-family:var(--headline);font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.05;letter-spacing:-0.03em;font-weight:700}
-    .hero h2{margin:12px auto 0;font-family:var(--headline);font-size:clamp(1.6rem,3.5vw,2.8rem);line-height:1.1;letter-spacing:-0.02em;font-weight:600;color:#ff9a72}
-    .hero-subheadline{margin:28px auto 0;max-width:620px;color:var(--muted);font-size:1.15rem;line-height:1.7}
-    .hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:36px}
-    .hero-micro{margin-top:20px;font-size:0.85rem;color:var(--muted)}
-
-    /* SECTIONS */
-    .section{padding:100px 0}
-    .section-alt{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0))}
-    .section-dark{background:linear-gradient(180deg,rgba(5,11,16,0) 0%,rgba(5,11,16,0.5) 100%)}
-    .section-head{text-align:center;margin-bottom:60px}
-    .section-head h2{margin:0 0 16px;font-family:var(--headline);font-size:clamp(2rem,4vw,3rem);line-height:1.1;letter-spacing:-0.02em;font-weight:700}
-    .section-head p{margin:0 auto;max-width:620px;color:var(--muted);line-height:1.7;font-size:1.05rem}
-
-    /* CALLOUT */
-    .callout-box{max-width:800px;margin:0 auto;padding:48px;border-radius:var(--radius);background:rgba(215,200,178,0.05);border:1px solid rgba(215,200,178,0.15);text-align:center}
-    .callout-box h3{font-family:var(--headline);font-size:1.5rem;color:#ff9a72;margin:0 0 24px}
-    .callout-box p{font-size:1.1rem;line-height:1.8;color:var(--text);margin:0 0 20px}
-    .callout-box ul{list-style:none;padding:0;margin:0;display:inline-block;text-align:left}
-    .callout-box ul li{padding:10px 0;padding-left:28px;position:relative;font-size:1rem;color:var(--muted)}
-    .callout-box ul li::before{content:'';position:absolute;left:0;top:18px;width:6px;height:6px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--orange))}
-    .callout-box strong{display:block;margin-top:32px;font-size:1.3rem;color:var(--cream)}
-
-    /* PROBLEM BOX */
-    .problem-box{max-width:800px;margin:0 auto;border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);padding:48px;background:rgba(255,255,255,0.02)}
-    .problem-box h3{font-family:var(--headline);font-size:1.4rem;margin:0 0 24px;color:var(--text)}
-    .problem-box ul{list-style:none;padding:0;margin:0 0 24px}
-    .problem-box li{padding:14px 0;padding-left:32px;position:relative;border-bottom:1px solid rgba(255,255,255,0.04);font-size:1.05rem;color:var(--muted)}
-    .problem-box li:last-child{border-bottom:none}
-    .problem-box li::before{content:'×';position:absolute;left:0;color:rgba(232,237,242,0.4);font-weight:700}
-    .problem-box .conclusion{margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.08);font-size:1.15rem;color:var(--text);font-weight:500}
-
-    /* METHOD */
-    .method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-    .method-card{padding:32px 24px;border-radius:15px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);text-align:center}
-    .method-card .num{width:48px;height:48px;margin:0 auto 18px;border-radius:15px;background:linear-gradient(135deg,var(--orange),var(--orange));color:#050a10;font-weight:900;font-size:1.2rem;display:flex;align-items:center;justify-content:center}
-    .method-card h3{margin:0 0 10px;font-size:1.05rem;font-weight:700}
-    .method-card p{margin:0;color:var(--muted);font-size:0.92rem;line-height:1.65}
-    .method-tagline{text-align:center;margin:40px auto 0;max-width:500px;font-size:1.15rem;font-style:italic;color:#ff9a72}
-
-    /* PROMISE */
-    .promise-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:900px;margin:0 auto}
-    .promise-card{padding:36px 32px;border-radius:15px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06)}
-    .promise-card h4{margin:0 0 12px;font-size:1.1rem;color:#ff9a72}
-    .promise-card p{margin:0;color:var(--muted);font-size:0.95rem;line-height:1.6}
-    .promise-highlight{max-width:700px;margin:40px auto 0;text-align:center;padding:28px 32px;border-radius:15px;background:rgba(215,200,178,0.08);border:1px solid rgba(215,200,178,0.15)}
-    .promise-highlight p{margin:0;font-size:1.1rem;color:var(--text);font-style:italic}
-
-    /* WHAT YOU GET */
-    .features-list{max-width:800px;margin:0 auto;list-style:none;padding:0}
-    .features-list li{display:flex;align-items:flex-start;gap:20px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,0.06)}
-    .features-list li:last-child{border-bottom:none}
-    .feature-icon{width:48px;height:48px;border-radius:15px;background:linear-gradient(135deg,rgba(199,154,91,0.2),rgba(208,122,55,0.15));border:1px solid rgba(199,154,91,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:1.2rem}
-    .feature-content h4{margin:0 0 6px;font-size:1.1rem;color:var(--cream)}
-    .feature-content p{margin:0;color:var(--muted);font-size:0.95rem;line-height:1.6}
-
-    /* WHY */
-    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;max-width:1000px;margin:0 auto}
-    .why-col h4{margin:0 0 20px;font-size:1.1rem;letter-spacing:0.1em;text-transform:uppercase}
-    .why-col.others h4{color:rgba(232,237,242,0.5)}
-    .why-col.us h4{color:#ff9a72}
-    .why-list{list-style:none;padding:0;margin:0}
-    .why-list li{padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.06);font-size:1rem;color:rgba(232,237,242,0.7)}
-    .why-list li:last-child{border-bottom:none}
-    .why-col.us .why-list li{color:var(--text);font-weight:500}
-
-    /* EXPECTATIONS */
-    .exp-two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:0 auto}
-    .exp-card{padding:36px;border-radius:var(--radius);background:rgba(255,255,255,0.02);border:1px solid var(--line)}
-    .exp-card h4{margin:0 0 20px;font-size:1rem;letter-spacing:0.1em;text-transform:uppercase}
-    .exp-card.expect h4{color:#ff9a72}
-    .exp-card.receive h4{color:var(--orange)}
-    .exp-list{list-style:none;padding:0;margin:0}
-    .exp-list li{padding:10px 0;font-size:0.95rem;color:rgba(232,237,242,0.85)}
-    .exp-card.receive .exp-list li{color:var(--text);font-weight:500}
-    .exp-footer{max-width:700px;margin:40px auto 0;text-align:center;padding:24px 32px;border-radius:15px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08)}
-    .exp-footer p{margin:0;font-size:1rem;color:var(--muted)}
-
-    /* FILTER */
-    .filter-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-    .filter-card{padding:40px;border-radius:var(--radius);background:rgba(255,255,255,0.02);border:1px solid var(--line)}
-    .filter-card.for h4{color:#ff9a72;margin:0 0 20px;font-size:1rem;letter-spacing:0.1em;text-transform:uppercase}
-    .filter-card.not h4{color:rgba(232,237,242,0.5);margin:0 0 20px;font-size:1rem;letter-spacing:0.1em;text-transform:uppercase}
-    .filter-list{list-style:none;padding:0;margin:0}
-    .filter-list li{padding:10px 0;font-size:0.95rem;color:rgba(232,237,242,0.85)}
-    .filter-card.not .filter-list li{color:rgba(232,237,242,0.5);text-decoration:line-through}
-
-    /* FINAL CTA */
-    .final-cta{padding:100px 0;text-align:center;background:linear-gradient(180deg,rgba(215,200,178,0.06) 0%,transparent 100%);border-top:1px solid rgba(255,255,255,0.06)}
-    .final-cta h2{font-family:var(--headline);font-size:clamp(2rem,4vw,3rem);margin:0 0 20px}
-    .final-cta p.lead{max-width:600px;margin:0 auto 40px;color:var(--muted);font-size:1.15rem;line-height:1.75;font-style:italic}
-    .final-cta p.note{margin-top:20px;font-size:0.85rem;color:var(--muted)}
-
-    /* DIFFERENCE BOX */
-    .difference-box{max-width:800px;margin:0 auto;padding:48px;border-radius:var(--radius);background:linear-gradient(180deg,rgba(242,92,42,0.1),rgba(199,154,91,0.03));border:1px solid rgba(199,154,91,0.2);text-align:center}
-    .difference-box h3{font-family:var(--headline);font-size:1.6rem;margin:0 0 20px;color:var(--orange)}
-    .difference-box p{margin:0 0 16px;font-size:1.15rem;line-height:1.8;color:var(--text)}
-    .difference-box .final-line{margin-top:24px;padding-top:24px;border-top:1px solid rgba(199,154,91,0.15);font-size:1.3rem;font-weight:600;color:#ff9a72}
-
-    footer{padding:50px 0;text-align:center;border-top:1px solid rgba(255,255,255,0.06)}
-    footer p{margin:0;color:var(--muted);font-size:0.9rem}
-
-    @media(max-width:900px){
-      .nav-links{display:none}
-      .menu-btn{display:flex}
-      .method-grid{grid-template-columns:1fr 1fr}
-      .promise-grid{grid-template-columns:1fr}
-      .exp-two-col{grid-template-columns:1fr}
-      .why-grid{grid-template-columns:1fr;gap:40px}
-      .filter-grid{grid-template-columns:1fr}
-      .difference-box{padding:32px 24px}
-    }
-    @media(max-width:600px){
-      .method-grid{grid-template-columns:1fr}
-      .callout-box{padding:32px 24px}
-      .problem-box{padding:32px 24px}
-      .promise-card{padding:28px 24px}
-      .exp-card{padding:28px}
-      .filter-card{padding:28px}
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-  <nav class="nav" id="nav">
-    <div class="nav-inner">
-      <a href="/" class="logo">
-        <img src="logo-white.jpg" alt="Bertin Coaching" style="width:62px;height:62px;object-fit:contain;background:transparent;padding:0;border:none;">
-      </a>
-      <ul class="nav-links">
-        <li><a href="/">Home</a></li>
-        <li><a href="/competition">Competition</a></li>
-        <li><a href="/lifestyle">Lifestyle</a></li>
-        <li><a href="/results">Results</a></li>
-        <li><a href="https://bertincoaching.com/lifestyle-booking" class="nav-cta">Apply Now</a></li>
-      </ul>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
-    </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="/">Home</a>
-      <a href="/competition">Competition</a>
-      <a href="/lifestyle">Lifestyle</a>
-      <a href="/results">Results</a>
-      <a href="https://bertincoaching.com/lifestyle-booking">Apply Now</a>
-    </div>
-  </nav>
+  <div class="bg-fx" id="bgFx" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
 
-  <section class="hero">
-    <div class="container">
-      <div class="hero-eyebrow">Lifestyle Coaching</div>
-      <h1>Rebuild Your Body</h1>
-      <h2>With a System That Actually Works</h2>
-      <p class="hero-subheadline">Lifestyle coaching for driven individuals who want to lose fat, regain control, and build a physique that lasts, without starting over every few months.</p>
-      <div class="hero-actions">
-        <a href="https://bertincoaching.com/lifestyle-booking" class="btn btn-primary btn-large">Apply for Lifestyle Coaching</a>
-      </div>
-      <p class="hero-micro">Hundreds of successful transformations. Structured, data-driven coaching.</p>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <div class="callout-box">
-        <h3>This is not for beginners looking for motivation.</h3>
-        <p>This is for people who:</p>
-        <ul>
-          <li>have tried multiple plans</li>
-          <li>know what to do, but can't stay consistent</li>
-          <li>are balancing work, responsibilities, and life</li>
-          <li>and are tired of restarting</li>
+  <div class="wrap">
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a href="../" class="logo" aria-label="Bertin Coaching home">
+          <img src="../logo-white.jpg" alt="Bertin Coaching" />
+          <span class="logo-text">Bertin <span style="color:var(--orange)">/</span> Coaching</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="../">Home</a></li>
+          <li><a href="../competition/">Competition</a></li>
+          <li><a href="../lifestyle/" class="active">Lifestyle</a></li>
+          <li><a href="../coaches/">Coaches</a></li>
+          <li><a href="../results/">Results</a></li>
+          <li><a href="#apply" class="nav-cta">Apply <span class="btn-arrow">→</span></a></li>
         </ul>
-        <strong>You don't need more information.<br>You need structure.</strong>
+        <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
       </div>
-    </div>
-  </section>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="../">Home</a>
+        <a href="../competition/">Competition</a>
+        <a href="../lifestyle/">Lifestyle</a>
+        <a href="../coaches/">Coaches</a>
+        <a href="../results/">Results</a>
+        <a href="#apply">Apply Now</a>
+      </div>
+    </nav>
 
-  <section class="section">
-    <div class="container">
-      <div class="problem-box">
-        <h3>Most people don't fail because they lack discipline.</h3>
-        <ul>
-          <li>their plan isn't built for their life</li>
-          <li>there is no system to follow</li>
-          <li>and no one is making real adjustments</li>
-        </ul>
-        <p class="conclusion">So they rely on motivation.<br>And motivation doesn't last.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-dark">
-    <div class="container">
-      <div class="section-head">
-        <h2>The Bertin Method™, adapted for lifestyle clients</h2>
-        <p>A structured approach designed to create results that are: measurable, sustainable, repeatable.</p>
-      </div>
-      <div class="method-grid">
-        <div class="method-card">
-          <div class="num">1</div>
-          <h3>Audit</h3>
-          <p>We assess your current body, habits, schedule, and constraints.</p>
-        </div>
-        <div class="method-card">
-          <div class="num">2</div>
-          <h3>Build</h3>
-          <p>You receive a personalized training, nutrition, and supplementation system.</p>
-        </div>
-        <div class="method-card">
-          <div class="num">3</div>
-          <h3>Execute</h3>
-          <p>We adjust weekly based on real data, not assumptions.</p>
-        </div>
-        <div class="method-card">
-          <div class="num">4</div>
-          <h3>Refine</h3>
-          <p>We optimize your physique while building long-term control.</p>
-        </div>
-      </div>
-      <p class="method-tagline">"This is not about doing more. It's about following the right system, consistently."</p>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>What You Can Expect</h2>
-      </div>
-      <div class="promise-grid">
-        <div class="promise-card">
-          <h4>Fat Loss & Recomposition</h4>
-          <p>Visible changes in body composition within the first weeks.</p>
-        </div>
-        <div class="promise-card">
-          <h4>Increased Strength & Energy</h4>
-          <p>Performance improvements that translate to daily life.</p>
-        </div>
-        <div class="promise-card">
-          <h4>Structured Routine</h4>
-          <p>A system that fits your life, not the other way around.</p>
-        </div>
-        <div class="promise-card">
-          <h4>Confidence & Control</h4>
-          <p>Knowing exactly what to do, and why it works.</p>
-        </div>
-      </div>
-      <div class="promise-highlight">
-        <p>Most clients don't just lose weight. They stop losing and regaining the same 10–20 pounds.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-head">
-        <h2>Your Coaching Includes</h2>
-        <p>Every variable is adjusted based on your progress. Nothing is left static.</p>
-      </div>
-      <ul class="features-list">
-        <li>
-          <div class="feature-icon">💪</div>
-          <div class="feature-content">
-            <h4>Fully Personalized Training Program</h4>
-            <p>Built for your schedule, equipment access, and fitness level. Updated as you progress.</p>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container-wide">
+        <div class="split">
+          <div>
+            <div class="eyebrow reveal">Lifestyle Coaching</div>
+            <h1 class="reveal delay-1">REBUILD<br/>YOUR <span class="accent">BODY.</span><br/><span class="stroke">STOP RESTARTING.</span></h1>
+            <p class="lede reveal delay-2">Lifestyle coaching for driven individuals who want to lose fat, regain control, and build a physique that lasts — without starting over every few months.</p>
+            <div class="actions reveal delay-3">
+              <a href="https://bertincoaching.com/lifestyle-booking" class="btn btn-primary btn-large">Apply for Lifestyle <span class="btn-arrow">→</span></a>
+              <a href="#method" class="btn btn-secondary btn-large">View the Method</a>
+            </div>
+            <p class="micro reveal delay-4">Hundreds of successful transformations · Structured, data-driven coaching</p>
           </div>
-        </li>
-        <li>
-          <div class="feature-icon">🥗</div>
-          <div class="feature-content">
-            <h4>Custom Nutrition Plan</h4>
-            <p>Flexible options that fit your lifestyle while delivering results.</p>
+          <div class="hero-photo reveal delay-2" data-label="Lifestyle Client — Recomposition">
+            <span class="tag">Transform</span>
           </div>
-        </li>
-        <li>
-          <div class="feature-icon">💊</div>
-          <div class="feature-content">
-            <h4>Supplementation Guidance</h4>
-            <p>Evidence-based protocols for optimization and performance.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TICKER -->
+    <section class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Lose Fat.</span><span class="sep">✦</span>
+        <span class="muted">Build Structure.</span><span class="sep">✦</span>
+        <span>Regain Control.</span><span class="sep">✦</span>
+        <span class="muted">Stop Restarting.</span><span class="sep">✦</span>
+        <span>Lose Fat.</span><span class="sep">✦</span>
+        <span class="muted">Build Structure.</span><span class="sep">✦</span>
+        <span>Regain Control.</span><span class="sep">✦</span>
+        <span class="muted">Stop Restarting.</span><span class="sep">✦</span>
+      </div>
+    </section>
+
+    <!-- CALLOUT: Not for beginners -->
+    <section class="section" style="padding:120px 0 0">
+      <div class="container">
+        <div class="callout reveal">
+          <h3>This is <span class="accent">not</span> for beginners looking for motivation.</h3>
+          <p>This is for people who have tried multiple plans, know what to do but can't stay consistent, are balancing work, responsibilities, and life — and are tired of restarting.</p>
+          <div class="final">You don't need more information.<br/>You need <span class="accent">structure.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section class="section" style="padding-top:80px">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label"><span class="num">01</span> The Problem</div>
+          <h2>Most people don't fail<br/>because they lack <span class="stroke">discipline.</span></h2>
+          <p>They fail because:</p>
+        </div>
+        <div class="why-grid">
+          <div class="why-col others reveal">
+            <h4>WHY PLANS FAIL</h4>
+            <ul class="why-list">
+              <li><span class="mark">—</span> Their plan isn't built for their life</li>
+              <li><span class="mark">—</span> There is no system to follow</li>
+              <li><span class="mark">—</span> No one is making real adjustments</li>
+              <li><span class="mark">—</span> They rely on motivation</li>
+            </ul>
           </div>
-        </li>
-        <li>
-          <div class="feature-icon">📊</div>
-          <div class="feature-content">
-            <h4>Bi-Weekly Check-ins & Adjustments</h4>
-            <p>Real feedback based on data, photos, and performance metrics.</p>
+          <div class="why-col us reveal delay-1">
+            <h4>WHAT WORKS INSTEAD</h4>
+            <ul class="why-list">
+              <li><span class="mark">01</span> A plan built around your real life</li>
+              <li><span class="mark">02</span> A clear system, not a generic template</li>
+              <li><span class="mark">03</span> Weekly data-driven adjustments</li>
+              <li><span class="mark">04</span> Accountability, not motivation</li>
+            </ul>
           </div>
-        </li>
-        <li>
-          <div class="feature-icon">🛠</div>
-          <div class="feature-content">
-            <h4>Access to Coaching Systems & Tools</h4>
-            <p>Track progress, communicate, and stay accountable.</p>
+        </div>
+        <p class="method-tagline reveal" style="margin-top:64px">Motivation doesn't last. <span class="accent">A system does.</span></p>
+      </div>
+    </section>
+
+    <!-- METHOD -->
+    <section class="section" id="method" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label"><span class="num">02</span> The Method</div>
+          <h2>The Bertin Effect™,<br/>adapted for <span class="accent">lifestyle clients.</span></h2>
+          <p>A structured approach designed to create results that are measurable, sustainable, and repeatable.</p>
+        </div>
+        <div class="method-grid">
+          <div class="method-card reveal">
+            <span class="marker">Phase</span>
+            <div class="number">01</div>
+            <h3>Audit</h3>
+            <p>We assess your current body, habits, schedule, and constraints. Nothing is built on assumption.</p>
           </div>
-        </li>
-        <li>
-          <div class="feature-icon">💬</div>
-          <div class="feature-content">
-            <h4>Ongoing Support & Accountability</h4>
-            <p>Questions answered, adjustments made, momentum maintained.</p>
+          <div class="method-card reveal delay-1">
+            <span class="marker">Phase</span>
+            <div class="number">02</div>
+            <h3>Build</h3>
+            <p>You receive a personalized training, nutrition, and supplementation system designed around your life.</p>
           </div>
-        </li>
-      </ul>
-    </div>
-  </section>
+          <div class="method-card reveal delay-2">
+            <span class="marker">Phase</span>
+            <div class="number">03</div>
+            <h3>Execute</h3>
+            <p>We adjust weekly based on real data — photos, weight, performance — not assumptions.</p>
+          </div>
+          <div class="method-card reveal delay-3">
+            <span class="marker">Phase</span>
+            <div class="number">04</div>
+            <h3>Refine</h3>
+            <p>We optimize your physique while building long-term control. The system evolves as you do.</p>
+          </div>
+        </div>
+        <p class="method-tagline reveal">"Not about doing more. It's about following the <span class="accent">right system</span>, consistently."</p>
+      </div>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Why This Works</h2>
-        <p>You don't need more motivation. You need a system that works.</p>
-      </div>
-      <div class="why-grid">
-        <div class="why-col others">
-          <h4>Most Coaching</h4>
-          <ul class="why-list">
-            <li>Gives you a plan and hopes you follow it</li>
-            <li>Reacts too late</li>
-            <li>Doesn't adapt to your life</li>
-            <li>Generic templates for everyone</li>
-          </ul>
+    <!-- WHAT YOU CAN EXPECT -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label"><span class="num">03</span> What You Can Expect</div>
+          <h2>Measurable. Sustainable.<br/><span class="accent">Repeatable.</span></h2>
         </div>
-        <div class="why-col us">
-          <h4>Bertin Coaching</h4>
-          <ul class="why-list">
-            <li>Your plan evolves weekly</li>
-            <li>Adjustments are based on real metrics</li>
-            <li>Your lifestyle is built into the system</li>
-            <li>You are coached, not managed</li>
-          </ul>
+        <div class="exp-two-col">
+          <div class="exp-card receive reveal">
+            <h4>RESULTS</h4>
+            <ul class="exp-list">
+              <li><span class="idx">01</span><span><strong>Fat Loss &amp; Recomposition</strong><span>Visible changes in body composition within the first weeks.</span></span></li>
+              <li><span class="idx">02</span><span><strong>Increased Strength &amp; Energy</strong><span>Performance improvements that translate to daily life.</span></span></li>
+            </ul>
+          </div>
+          <div class="exp-card receive reveal delay-1">
+            <h4>STRUCTURE</h4>
+            <ul class="exp-list">
+              <li><span class="idx">03</span><span><strong>Structured Routine</strong><span>A system that fits your life, not the other way around.</span></span></li>
+              <li><span class="idx">04</span><span><strong>Confidence &amp; Control</strong><span>Knowing exactly what to do, and why it works.</span></span></li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div style="text-align:center;margin-top:40px;">
-        <p style="font-size:1.15rem;color:#ff9a72;font-style:italic;">This is not a template. This is a system built around you.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt">
-    <div class="container">
-      <div class="section-head">
-        <h2>What We Expect / What You Receive</h2>
-        <p>This is a collaboration. The system only works if it is followed.</p>
-      </div>
-      <div class="exp-two-col">
-        <div class="exp-card expect">
-          <h4>What We Expect From You</h4>
-          <ul class="exp-list">
-            <li>Consistency</li>
-            <li>Communication</li>
-            <li>Willingness to follow structure</li>
-          </ul>
-        </div>
-        <div class="exp-card receive">
-          <h4>What You Can Expect From Us</h4>
-          <ul class="exp-list">
-            <li>Precision</li>
-            <li>Adjustments</li>
-            <li>Accountability</li>
-            <li>Results</li>
-          </ul>
+        <div class="callout reveal" style="margin-top:48px;text-align:center">
+          <p style="font-size:1.15rem;color:var(--white)">Most clients don't just lose weight.<br/>They <span style="color:var(--orange)">stop losing and regaining</span> the same 10–20 pounds.</p>
         </div>
       </div>
-      <div class="exp-footer">
-        <p>This is a collaboration. But the system only works if it is followed.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Who This Is For</h2>
-      </div>
-      <div class="filter-grid">
-        <div class="filter-card for">
-          <h4>This Is For You If</h4>
-          <ul class="filter-list">
-            <li>You are ready to stop restarting</li>
-            <li>You want structure, not guesswork</li>
-            <li>You are willing to execute</li>
-          </ul>
+    <!-- COACHING INCLUDES -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label"><span class="num">04</span> Your Coaching Includes</div>
+          <h2>Every variable <span class="accent">adjusted.</span></h2>
+          <p>Nothing is left static. Your plan evolves as your body, schedule, and life evolve.</p>
         </div>
-        <div class="filter-card not">
-          <h4>This Is Not For You If</h4>
-          <ul class="filter-list">
-            <li>You are looking for a quick fix</li>
-            <li>You are not ready to commit</li>
-            <li>You prefer flexibility over results</li>
-          </ul>
+        <div class="exp-two-col">
+          <div class="exp-card receive reveal">
+            <h4>YOUR SYSTEM</h4>
+            <ul class="exp-list">
+              <li><span class="idx">01</span><span><strong>Fully Personalized Training</strong><span>Built for your schedule, equipment, and fitness level. Updated as you progress.</span></span></li>
+              <li><span class="idx">02</span><span><strong>Custom Nutrition Plan</strong><span>Flexible options that fit your lifestyle while delivering results.</span></span></li>
+              <li><span class="idx">03</span><span><strong>Supplementation Guidance</strong><span>Evidence-based protocols for optimization and performance.</span></span></li>
+            </ul>
+          </div>
+          <div class="exp-card receive reveal delay-1">
+            <h4>YOUR SUPPORT</h4>
+            <ul class="exp-list">
+              <li><span class="idx">04</span><span><strong>Bi-Weekly Check-ins &amp; Adjustments</strong><span>Real feedback based on data, photos, and performance metrics.</span></span></li>
+              <li><span class="idx">05</span><span><strong>Access to Coaching Systems &amp; Tools</strong><span>Track progress, communicate, and stay accountable.</span></span></li>
+              <li><span class="idx">06</span><span><strong>Ongoing Support &amp; Accountability</strong><span>Questions answered, adjustments made, momentum maintained.</span></span></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="section section-dark">
-    <div class="container">
-      <div class="difference-box">
-        <h3>The Difference Is Not Effort</h3>
-        <p>Most people are already trying hard.</p>
-        <p>The difference is having a system that actually works.</p>
-        <div class="final-line">If you follow the process, results are not a question.<br>Only the timeline varies.</div>
+    <!-- FILTER -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-label"><span class="num">05</span> The Filter</div>
+          <h2>Who this is <span class="accent">for.</span></h2>
+        </div>
+        <div class="filter-grid">
+          <div class="filter-card for reveal">
+            <h4>THIS IS FOR YOU IF</h4>
+            <ul class="filter-list">
+              <li>You are ready to stop restarting</li>
+              <li>You want structure, not guesswork</li>
+              <li>You are willing to execute</li>
+              <li>You're done looking for shortcuts</li>
+            </ul>
+          </div>
+          <div class="filter-card not reveal delay-1">
+            <h4>THIS IS NOT FOR YOU IF</h4>
+            <ul class="filter-list">
+              <li>You are looking for a quick fix</li>
+              <li>You are not ready to commit</li>
+              <li>You prefer flexibility over results</li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="final-cta">
-    <div class="container">
-      <h2>Apply for Lifestyle Coaching</h2>
-      <p class="lead">We accept a limited number of clients to maintain coaching quality.</p>
-      <a href="https://bertincoaching.com/lifestyle-booking" class="btn btn-primary btn-large">Apply Now</a>
-      <p class="note">Applications reviewed within 24 hours.</p>
-    </div>
-  </section>
+    <!-- DIFFERENCE -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="callout reveal" style="text-align:center">
+          <h3>The difference is not <span class="stroke">effort.</span></h3>
+          <p>Most people are already trying hard.</p>
+          <p>The difference is having a system that <span style="color:var(--orange)">actually works.</span></p>
+          <div class="final">If you follow the process, results are not a question.<br/>Only the <span class="accent">timeline</span> varies.</div>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <div class="container">
-      <p><a href="/">← Back to Home</a></p>
-      <p style="margin-top:12px;">&copy; 2026 Bertin Coaching. Elite Physique Systems.</p>
-    </div>
-  </footer>
+    <!-- FINAL CTA -->
+    <section class="final-cta" id="apply">
+      <div class="content container reveal">
+        <h2>Apply for<br/><span class="accent">Lifestyle Coaching.</span></h2>
+        <p>We accept a limited number of clients to maintain coaching quality. Every application is read personally.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+          <a href="https://bertincoaching.com/lifestyle-booking" class="btn btn-primary btn-large">Apply Now <span class="btn-arrow">→</span></a>
+          <a href="../#coaches" class="btn btn-secondary btn-large">Meet the Coaches</a>
+        </div>
+        <p class="hero-micro">Applications reviewed within 24 hours.</p>
+      </div>
+    </section>
 
-  <script>
-    window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>20)});
-    const menuBtn=document.getElementById('menuBtn');
-    const mobileMenu=document.getElementById('mobileMenu');
-    menuBtn.addEventListener('click',()=>{mobileMenu.classList.toggle('active')});
-    document.addEventListener('click',(e)=>{if(!mobileMenu.contains(e.target)&&!menuBtn.contains(e.target))mobileMenu.classList.remove('active')});
-  </script>
+    <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <div class="foot-grid">
+          <div class="foot-brand">
+            <img src="../logo-white.jpg" alt="Bertin Coaching" />
+            <div class="name">Bertin / Coaching</div>
+            <p>Elite coaching for high-level Bikini &amp; Fit Model athletes. Built on science. Driven by discipline. Focused on results.</p>
+          </div>
+          <div class="foot-col">
+            <h5>Coaching</h5>
+            <a href="../competition/">Competition</a>
+            <a href="../lifestyle/">Lifestyle</a>
+            <a href="../#coaches">Coaches</a>
+            <a href="../results/">Results</a>
+          </div>
+          <div class="foot-col">
+            <h5>Company</h5>
+            <a href="../#coaches">About</a>
+            <a href="../#faq">FAQ</a>
+            <a href="#apply">Apply</a>
+          </div>
+          <div class="foot-col">
+            <h5>Contact</h5>
+            <a href="https://bertincoaching.com/athletes-application-form">Athletes</a>
+            <a href="https://bertincoaching.com/lifestyle-booking">Lifestyle</a>
+            <a href="mailto:hello@bertincoaching.com">Email</a>
+          </div>
+        </div>
+        <div class="foot-bottom">
+          <p>© 2026 Bertin Coaching · Elite Physique Systems</p>
+          <div class="tag">Begin. Believe. <span class="accent">Become.</span></div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../site.js"></script>
 </body>
 </html>
